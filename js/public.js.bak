@@ -1,0 +1,375 @@
+// 15. Public Display
+let publicWindowRef=null;
+let screenDetailsRef=null;
+let screenWatcherStarted=false;
+
+function getPreferredPublicScreen(){
+  // Prefer a real second display reported by the Window Management API.
+  try{
+    if(screenDetailsRef?.screens?.length){
+      const current=screenDetailsRef.currentScreen;
+      const others=screenDetailsRef.screens.filter(s=>s!==current);
+      if(others.length) return others[0];
+    }
+  }catch(e){}
+  // Fallback: on a classic extended desktop, the second monitor is commonly
+  // available to the window manager through the total screen geometry.
+  return null;
+}
+
+function positionPublicWindow(){
+  const w=publicWindowRef;
+  if(!w || w.closed) return false;
+  const target=getPreferredPublicScreen();
+  try{
+    if(target){
+      const width=Math.max(900,Math.floor(target.availWidth||target.width||1500));
+      const height=Math.max(600,Math.floor(target.availHeight||target.height||900));
+      w.moveTo(Math.floor(target.availLeft||target.left||0),Math.floor(target.availTop||target.top||0));
+      w.resizeTo(width,height);
+      w.focus();
+      return true;
+    }
+  }catch(e){}
+  return false;
+}
+
+async function setupPublicScreenWatcher(){
+  if(screenWatcherStarted)return;
+  screenWatcherStarted=true;
+  try{
+    if(typeof window.getScreenDetails==='function'){
+      screenDetailsRef=await window.getScreenDetails();
+      const reposition=()=>setTimeout(positionPublicWindow,100);
+      screenDetailsRef.addEventListener?.('screenschange',reposition);
+      screenDetailsRef.addEventListener?.('currentscreenchange',reposition);
+      reposition();
+    }
+  }catch(e){
+    // Browser may require the Window Management permission. The public window
+    // still works; it simply cannot be moved automatically until permission is granted.
+  }
+}
+
+async function enterPublicFullscreen(){
+  try{
+    if(document.fullscreenElement){document.body.classList.add("publicFullscreen");return true;}
+    await document.documentElement.requestFullscreen();
+    document.body.classList.add("publicFullscreen");
+    return true;
+  }catch(e){
+    document.body.classList.add("publicFullscreenReady");
+    return false;
+  }
+}
+function keepPublicFullscreen(){
+  if(new URLSearchParams(location.search).get("display")!=="public")return;
+  // Browsers only allow fullscreen automatically when the action is user initiated.
+  // We try on load/focus, and the persistent button remains available if blocked.
+  setTimeout(()=>enterPublicFullscreen(),250);
+}
+document.addEventListener("fullscreenchange",()=>{
+  if(document.fullscreenElement)document.body.classList.add("publicFullscreen");
+  else document.body.classList.remove("publicFullscreen");
+});
+// Keyboard shortcut: TAB activates Public Display fullscreen when this window has focus.
+// This is a real user gesture, so browsers allow the Fullscreen API here.
+let publicFKeyBound=false;
+function bindPublicFullscreenKey(){
+  if(publicFKeyBound)return;
+  publicFKeyBound=true;
+  window.addEventListener("keydown",(e)=>{
+    if(e.key!=="Tab" || e.ctrlKey || e.altKey || e.metaKey) return;
+    e.preventDefault();
+    enterPublicFullscreen();
+  });
+}
+bindPublicFullscreenKey();
+// Public display is intentionally read-only: no setup/result editing controls or context menu.
+if(new URLSearchParams(location.search).get("display")==="public"){
+  window.addEventListener("contextmenu",e=>e.preventDefault());
+  window.addEventListener("keydown",e=>{
+    if((e.ctrlKey||e.metaKey) && ["s","u","r"].includes(String(e.key).toLowerCase())) e.preventDefault();
+    if(e.key==="F5") e.preventDefault();
+  });
+}
+window.addEventListener("focus",()=>{ if(!document.fullscreenElement) document.body.classList.add("publicFullscreenReady"); });
+setTimeout(keepPublicFullscreen,500);
+function updateTimerDisplays(){
+  document.querySelectorAll(".timerValue, .cleanTimer, #publicTimer, #publicTieTimer").forEach(el=>el.textContent=fmtTime(remainingTime()));
+  document.querySelectorAll(".timer").forEach(el=>{
+    el.classList.toggle("expired",!!STATE.timer.expired);
+    if(!el.querySelector(".timerValue"))el.textContent=fmtTime(remainingTime());
+  });
+  document.querySelectorAll(".liveRound").forEach(el=>el.textContent=String(STATE.currentRound));
+}
+function openPublicDisplay(){
+  const existing=publicWindowRef&&!publicWindowRef.closed?publicWindowRef:null;
+  if(existing){ existing.focus(); return; }
+  // Keep the public display as a normal popup. Windows decides which monitor it belongs to.
+  // With Win+P > Extend, the operator can place it on the TV once; the popup stays there.
+  publicWindowRef=window.open(
+    location.href.split('?')[0]+'?display=public',
+    'WT_PUBLIC',
+    'popup=yes,width=1600,height=900,resizable=yes,scrollbars=no'
+  );
+  if(!publicWindowRef){alert('Autorisez les fenêtres popup pour ouvrir l’écran Public.');return;}
+  setTimeout(()=>{try{publicWindowRef.focus();}catch(e){}},300);
+}
+
+// Best-effort automatic detection when an HDMI/second monitor is connected.
+// The browser cannot be allowed to open/move windows silently on every system,
+// so we only auto-position an already opened Public Display and use the
+// Window Management API when the browser grants it.
+window.addEventListener('resize',()=>setTimeout(positionPublicWindow,150));
+setTimeout(setupPublicScreenWatcher,500);
+
+// Keep watching for a TV/HDMI monitor being connected after the competition
+// is already running. When the browser exposes the Window Management API,
+// the Public Display is moved/resized automatically to the newly detected
+// secondary screen. If no public window exists yet, we make a best-effort
+// attempt to open one; popup policies may require the operator to click
+// OPEN PUBLIC DISPLAY once, after which all future HDMI changes are automatic.
+// Do not poll/move/resize the popup every 1.5 seconds. That creates unnecessary
+// browser/Windows work and can make the operator interface feel frozen.
+// The Window Management API event listeners above handle display changes when available.
+
+function renderPublic(){
+  // Public window has its own stable shell. Never replace the whole document
+  // during synchronization: doing so can make the TV appear as a blank color.
+  if(!document.getElementById("publicRoot")) document.body.innerHTML=`<div id="publicRoot" class="public"></div>`;
+  window.enterPublicFullscreen=enterPublicFullscreen;
+  renderPublicScreen();
+  bindSync();
+  setTimeout(()=>enterPublicFullscreen(),300);
+  document.addEventListener("click",()=>enterPublicFullscreen(),{once:true});
+}
+function splitName(full){
+  const n=String(full||'').trim().replace(/\s+/g,' ');
+  if(!n)return {last:'—',first:'—'};
+  const parts=n.split(' ');
+  if(parts.length===1)return {last:parts[0],first:'—'};
+  return {last:parts[0],first:parts.slice(1).join(' ')};
+}
+function fmt1Public(v){
+  const n=Number(v);
+  return Number.isFinite(n)?n.toFixed(1):'—';
+}
+function publicIdentity(a){
+  const n=splitName(a?.name);
+  return `<div class="publicIdentity"><div class="publicAthleteName">${esc(a?.name||'—')}</div><div class="publicAthleteMeta"><span><b>NOM</b> ${esc(n.last)}</span><span><b>PRÉNOM</b> ${esc(n.first)}</span><span><b>CLUB</b> ${esc(a?.club||'—')}</span></div></div>`;
+}
+function publicNotes(r){
+  if(!r)return `<div class="publicNotes"><div class="notesTitle">NOTES</div><div class="notesEmpty">—</div></div>`;
+  return `<div class="publicNotes"><div class="notesTitle">NOTES</div><div class="notesGrid"><div><span>ACCURACY</span><strong>${fmt1Public(r.accuracy)}</strong></div><div><span>PRESENTATION</span><strong>${fmt1Public(r.presentation)}</strong></div><div class="noteTotal"><span>TOTAL ROUND</span><strong>${fmt3(r.total)}</strong></div></div></div>`;
+}
+function publicInfoTop(){
+  const mat=STATE.matNumber||1;
+  return `<div class="publicMat">TAPIS ${esc(mat)}</div>`;
+}
+function renderPublicScreen(){
+  normalizeAthleteText?.();
+  const root=document.getElementById('publicRoot');
+  if(!root)return;
+
+  // The Public Display is private from setup until the competition is actually started.
+  if(!STATE.setupComplete){
+    const today=new Date();
+    const dateText=today.toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit',year:'numeric'});
+    root.innerHTML=`<div class="publicWelcome">
+      <button class="publicFsBtn" onclick="window.enterPublicFullscreen?.()">⛶ FULL SCREEN</button><div class="appSignature publicSignature" aria-label="A.N signature">A.N</div>
+      <div class="welcomeLogo">${federationLogoSVG()}</div>
+      <div class="welcomeFederation">${FEDERATION_NAME}</div>
+      <div class="welcomeCompetition">${esc(STATE.competitionName||'POOMSAE CHAMPIONSHIP')}</div>
+      <div class="welcomeDate">${dateText}</div>
+      <div class="welcomeLine"></div>
+      <div class="welcomeWaiting">EN ATTENTE DU DÉBUT DE LA COMPÉTITION</div>
+    </div>`;
+    return;
+  }
+
+  if(STATE.setupComplete && !STATE.competitionStarted){
+    const fixed=STATE.fixedPoomsae||{};
+    const semi=fixed.semi||{}, fin=fixed.final||fixed;
+    const phase=STATE.phase||'DIRECT FINAL';
+    const r1 = phase==='SEMI-FINAL' ? semi.round1 : fin.round1;
+    const r2 = phase==='SEMI-FINAL' ? semi.round2 : fin.round2;
+    const p1 = WT_DATA.poomsae[r1] || '—';
+    const p2 = WT_DATA.poomsae[r2] || '—';
+    const finalPoomsae = phase==='SEMI-FINAL' ? `<div class="readyPoomsaeGroup final"><div class="readyPoomsaePhase">FINALE</div><div class="readyPoomsaeRow"><span>ROUND 1</span><strong>${esc(WT_DATA.poomsae[fin.round1]||'—')}</strong></div><div class="readyPoomsaeRow"><span>ROUND 2</span><strong>${esc(WT_DATA.poomsae[fin.round2]||'—')}</strong></div></div>` : '';
+    root.innerHTML=`<div class="publicCompetitionReady readyEditorial">
+      <button class="publicFsBtn" onclick="window.enterPublicFullscreen?.()">⛶ FULL SCREEN</button><div class="appSignature publicSignature" aria-label="A.N signature">A.N</div>
+      <header class="readyHeader"><div class="readyBrand">${federationLogoSVG()}<div>${FEDERATION_NAME}</div></div><div class="readyTitle">${esc(STATE.competitionName||'POOMSAE CHAMPIONSHIP')}</div><div class="readyPhase">${esc(phase)}</div></header>
+      <main class="readyLayout readyLayoutNoRoster">
+        <section class="readyMain readyMainCentered">
+          <div class="readyHeadline"><div class="readyClass"><span>CLASS</span><strong>${esc(STATE.classCode||'—')}</strong></div><div class="readyCategory"><span>CATEGORY</span><strong>${esc(STATE.category||'—')}</strong></div></div>
+          <div class="readySecondary">${STATE.participation!=="DUO"?`<div><span>SEXE</span><strong>${esc(STATE.gender||'—')}</strong></div>`:""}<div><span>PARTICIPATION</span><strong>${esc(STATE.participation||'INDIVIDUAL')}</strong></div><div><span>${STATE.participation==='DUO'?'DUOS':STATE.participation==='TEAM'?'TEAMS':'ATHLETES'}</span><strong>${STATE.athletes?.length||0}</strong></div><div><span>JUDGES</span><strong>${STATE.judgeCount||0}</strong></div><div><span>TAPIS</span><strong>${STATE.matNumber||1}</strong></div></div>
+          <div class="readyPoomsaeEditorial"><div class="readyPoomsaeGroup"><div class="readyPoomsaePhase">${phase==='SEMI-FINAL'?'DEMI-FINALE':'FINALE'}</div><div class="readyPoomsaeRow"><span>ROUND 1</span><strong>${esc(p1)}</strong></div><div class="readyPoomsaeRow"><span>ROUND 2</span><strong>${esc(p2)}</strong></div></div>${finalPoomsae}</div>
+        </section>
+      </main>
+      <div class="readyWaiting">EN ATTENTE DU DÉBUT DE LA COMPÉTITION</div>
+    </div>`;
+    return;
+  }
+
+  if(STATE.publicMode==='ranking'){
+    const list=computeRanking().filter(x=>!x.absent);
+    root.innerHTML=`<div class="publicCurrentRanking"><button class="publicFsBtn" onclick="window.enterPublicFullscreen?.()">⛶ FULL SCREEN</button><div class="appSignature publicSignature">A.N</div><header><div class="phaseTag">LIVE STANDINGS</div><h1>CURRENT RANKING</h1><div class="rankingMeta">${esc(STATE.competitionName||'POOMSAE COMPETITION')} · MAT ${esc(STATE.matNumber||1)}</div></header><main>${list.length?rankingHTML(list):'<div class="rankingEmpty">NO FINAL SCORES YET</div>'}</main><footer>CLASSEMENT ACTUEL</footer></div>`;
+    return;
+  }
+
+  const a=currentAthlete();
+  const mode=STATE.publicMode||'ready';
+  const r1=a?.rounds?.[0], r2=a?.rounds?.[1];
+  const r=STATE.publishedResult || (STATE.currentRound===2 ? r2 : r1);
+  const mat=STATE.matNumber||1;
+  const category=STATE.category||'—';
+  const athleteName=a?.name||'—';
+  const club=a?.club||'—';
+  const modeRound = mode==='result' && r?.round ? Number(r.round) : Number(STATE.currentRound||1);
+  const phaseSet=(STATE.phase==='SEMI-FINAL'?(STATE.fixedPoomsae?.semi||{}):(STATE.fixedPoomsae?.final||{}));
+  const roundKey=`round${modeRound}`;
+  const configuredPoomsae=phaseSet[roundKey]||STATE.fixedPoomsae?.[roundKey]||'';
+  const storedPoomsae=r?.poomsae||a?.rounds?.[modeRound-1]?.poomsae||configuredPoomsae;
+  const resultRound=modeRound;
+  const poomsae=WT_DATA.poomsae[storedPoomsae]||storedPoomsae||'—';
+
+  const judgeProgress=(result)=>{
+    const count=Number(STATE.judgeCount||0);
+    const remote=STATE.judgeQr?.scores||{};
+    return `<div class="publicJudgeProgress"><span class="publicJudgeProgressTitle">JUGES</span>${Array.from({length:count},(_,i)=>{const n=i+1;const done=!!result?.judges?.[i]||!!remote[n];return `<span class="publicJudgeChip ${done?'done':'pending'}"><b>J${n}</b><i>${done?'✓':'…'}</i></span>`}).join('')}</div>`;
+  };
+
+  const judgeTable=(result)=>{
+    if(!result?.judges?.length) return `<div class="publicJudgeBlock"><div class="publicJudgeTitle">NOTES DES ARBITRES / JUGES</div><div class="publicNoScores">EN ATTENTE DES NOTES</div></div>`;
+    const accEx=Array.isArray(result.accuracyExcluded)?result.accuracyExcluded:[];
+    const presEx=Array.isArray(result.presentationExcluded)?result.presentationExcluded:[];
+    return `<div class="publicJudgeBlock">
+      <div class="publicJudgeTitle">NOTES DES ARBITRES / JUGES</div>
+      <div class="publicJudgeTable publicJudgeTableCompact">
+        <div class="publicJudgeLegend"><span>JUGE</span><span>ACCURACY</span><span>PRESENTATION</span><span>TOTAL</span></div>
+        ${result.judges.map((j,i)=>{
+          const exA=accEx.includes(i), exP=presEx.includes(i);
+          const total=(Number(j.accuracy)||0)+(Number(j.presentation)||0);
+          return `<div class="publicJudgeRow"><div class="judgeNo">J${i+1}</div>
+            <div class="judgeScore ${exA?'isExcluded':''}"><span class="scoreValue">${fmt1Public(j.accuracy)}</span>${exA?'<small class="excludedBadge">EXCLUE</small>':''}</div>
+            <div class="judgeScore ${exP?'isExcluded':''}"><span class="scoreValue">${fmt1Public(j.presentation)}</span>${exP?'<small class="excludedBadge">EXCLUE</small>':''}</div>
+            <div class="judgeTotal">${fmt3(total)}</div></div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  };
+
+  const topBase=`<div class="publicClean publicScoreBoard">
+    <button class="publicFsBtn" onclick="window.enterPublicFullscreen?.()">⛶ FULL SCREEN</button>
+    <div class="scoreMat">TAPIS ${esc(mat)}</div>
+    <div class="scoreCategory">${esc(publicCompetitionDescriptor())}</div>
+    <div class="publicProgress">${Math.min(STATE.currentIndex+1,Math.max(STATE.athletes?.length||0,1))} / ${STATE.athletes?.length||0}</div>
+    <div class="appSignature publicSignature" aria-label="A.N signature">A.N</div>`;
+  const top=topBase+`<div class="scoreIdentity"><div class="cleanAthlete">${esc(athleteName)}</div><div class="cleanClub">${esc(club)}</div></div>`;
+  const bottom='</div>';
+
+  if(mode==='tie'){
+    const tb=STATE.tieBreak||{};
+    const ids=tb.athleteIds||[];
+    const ta=ids.map(id=>STATE.athletes.find(x=>x.id===id)).filter(Boolean);
+    const scores=tb.scores||{};
+    const tieP=WT_DATA.poomsae[tb.poomsae]||tb.poomsae||poomsae;
+    root.innerHTML=`<div class="publicTieBreakScreen"><button class="publicFsBtn" onclick="window.enterPublicFullscreen?.()">⛶ FULL SCREEN</button><div class="appSignature publicSignature">A.N</div><div class="tieBreakKicker">TIE-BREAK · ÉGALITÉ</div><div class="tieBreakPoomsaeLabel">POOMSAE CHOISI AUTOMATIQUEMENT</div><div id="publicTieTimer" class="publicTieTimer">${fmtTime(remainingTime())}</div><div class="tieBreakPoomsae">${esc(tieP)}</div><div class="tieBreakContestants">${ta.map(x=>`<div class="tieBreakContestant ${x.id===a?.id?'active':''}"><div class="tieBreakAthleteName">${esc(x.name)}</div><div class="tieBreakClub">${esc(x.club)}</div><div class="tieBreakScore">${scores[x.id]?fmt3(scores[x.id].total):'—'}</div><div class="tieBreakState">${scores[x.id]?'NOTE VALIDÉE':x.id===a?.id?'EN NOTATION':'EN ATTENTE'}</div></div>`).join('')}</div>${judgeProgress(null)}<div class="tieBreakInstruction">${STATE.state===STATES.TIE_BREAK_CALCULATING?'CALCUL DES NOTES':'LES DEUX ATHLÈTES EFFECTUENT LE MÊME POOMSAE'}</div></div>`;
+    return;
+  }
+
+  if(mode==='calc'){
+    root.innerHTML=top+`<div class="scoreCenter"><div class="cleanPoomsaeLabel">POOMSAE</div><div class="cleanPoomsae">${esc(poomsae)}</div><div class="scoreWaiting">CALCUL DES NOTES</div>${judgeProgress(r)}</div>`+bottom;
+    return;
+  }
+
+  if(mode==='running' || mode==='ready'){
+    root.innerHTML=top+`<div class="scoreCenter"><div class="cleanPoomsaeLabel">ROUND ${esc(resultRound)} — POOMSAE</div><div class="cleanPoomsae">${esc(poomsae)}</div><div class="cleanStatus">${STATE.timer?.expired?'TEMPS TERMINÉ':'PRÉSENTATION EN COURS'}</div>${judgeProgress(r)}<div id="publicTimer" class="cleanTimer">${fmtTime(remainingTime())}</div></div>`+bottom;
+    return;
+  }
+
+  if(mode==='result'){
+    const accuracy=r?fmt1Public(r.accuracy):'—';
+    const presentation=r?fmt1Public(r.presentation):'—';
+    const roundScore=r?fmt3(r.total):'—';
+    root.innerHTML=top+`<div class="scoreResults resultOneScreen">
+      <aside class="resultSummary">
+        <div class="summaryLabel">ACCURACY MOYENNE</div><div class="summaryValue">${accuracy}</div>
+        <div class="summaryLabel">PRESENTATION MOYENNE</div><div class="summaryValue">${presentation}</div>
+        <div class="summaryRound"><span>NOTE DU ROUND</span><strong>${roundScore}</strong></div>
+      </aside>
+      <div class="resultLeft">
+        <div class="scorePoomsae"><span>ROUND ${esc(resultRound)} · POOMSAE</span><strong>${esc(poomsae)}</strong></div>
+        ${judgeProgress(r)}${judgeTable(r)}
+      </div>
+    </div>`+bottom;
+    return;
+  }
+
+  if(mode==='final'&&a){
+    const rank=computeRanking().find(x=>x.id===a.id)?.position||'—';
+    root.innerHTML=top+`<div class="scoreResults finalOneScreen">
+      <div class="finalRoundMini"><span>ROUND 1</span><strong>${r1?fmt3(r1.total):'—'}</strong></div>
+      <div class="finalHero">
+        <div class="finalMainScore"><span>FINAL SCORE</span><strong>${a.finalScore!=null?fmt3(a.finalScore):'—'}</strong></div>
+        <div class="finalRankBig"><span>RANK</span><strong>#${rank}</strong></div>
+      </div>
+      <div class="finalRoundMini"><span>ROUND 2</span><strong>${r2?fmt3(r2.total):'—'}</strong></div>
+    </div>`+bottom;
+    return;
+  }
+
+  if(mode==='podium'){
+    if(STATE.phase!=="FINAL"&&STATE.phase!=="DIRECT FINAL"){
+      root.innerHTML=top+`<div class="scoreCenter"><div class="scoreWaiting">EN ATTENTE DE LA FINALE</div></div>`+bottom;
+      return;
+    }
+    // Use the exact same podium markup as the operator display.
+    root.innerHTML=`<div class="publicPodiumMirror"><div class="card podiumCard"><div class="phaseTag">FINAL CLASSIFICATION</div><h1>Champions Podium</h1>${podiumHTML()}</div></div>`;
+    return;
+  }
+
+  if(mode==='qualified'){
+    const list=qualifiedParticipants();
+    root.innerHTML=`<div class="publicQualified qualifiedElegant"><div class="publicSignature appSignature" aria-label="A.N signature">A.N</div><div class="qualifiedGlow" aria-hidden="true"></div><header class="qualifiedHero"><div class="qualifiedKicker">DEMI-FINALE · QUALIFICATION</div><h1>${qualifiedCount()} ATHLÈTES QUALIFIÉS</h1><div class="qualifiedDescriptor">${esc(publicCompetitionDescriptor())}</div><p>FINALISTES</p></header><main class="publicQualifiedList">${list.map((x,i)=>`<div class="publicQualifiedRow"><div class="qualifiedRank">${i+1}</div><div class="qualifiedName"><strong>${esc(x.name)}</strong>${x.wonByPresentation?`<small class="presentationTieRemark">WIN BY PRESENTATION NOTE</small>`:""}<small>${esc(x.club||'')}</small></div><div class="qualifiedScore">${fmt3(x.finalScore)}</div></div>`).join('')}</main><div class="qualifiedFooter">ACCÈS À LA FINALE</div></div>`;
+    return;
+  }
+
+  root.innerHTML=top+`<div class="scoreCenter"><div class="scoreWaiting">EN ATTENTE</div></div>`+bottom;
+}
+
+function publicCompetitionDescriptor(){
+  const cat=STATE.category||"";
+  const gender=STATE.participation==="DUO" ? "" : (STATE.gender||"");
+  const cls=STATE.classCode||"";
+  const part=STATE.participation||"INDIVIDUAL";
+  const partLabel=part==="INDIVIDUAL"?"INDIV":part;
+  return [cat,gender,cls,partLabel].filter(Boolean).join(" · ");
+}
+function publicHeader(a){
+  return `<header class="phead publicHeader"><div class="fedLine"><img class="publicFedLogo" src="federation_logo_transparent.png" alt="${FEDERATION_NAME}"><div class="fedName">${FEDERATION_NAME}</div></div><div class="competitionTitle">POOMSAE COMPETITION</div><div class="phase">${esc(STATE.phase)}</div><div class="meta"><span>MAT ${STATE.matNumber||1}</span><span>${esc(publicCompetitionDescriptor())}</span></div>${a?`<div class="athlete">${esc(a.name)}</div><div class="club">${esc(a.club)}</div>`:""}</header>`
+}
+function publicResult(r){
+  return `<main class="publicStage"><div class="publicBox result publicResultBox"><div class="publicSectionTitle">ROUND ${esc(resultRound)} RESULT</div><div class="resultHeroScore">${fmt3(r.total)}</div><div class="resultHeroLabel">ROUND SCORE</div><div class="resultCards"><div><b>ACCURACY</b><strong>${fmt1Public(r.accuracy)}</strong></div><div><b>PRESENTATION</b><strong>${fmt1Public(r.presentation)}</strong></div></div>${scoreTable(r)}</div></main>`
+}
+function publicFinalResult(a){
+  const ranking=computeRanking(),current=ranking.find(x=>x.id===a.id),r1=a.rounds?.[0],r2=a.rounds?.[1];
+  return `<main class="publicStage"><div class="publicBox result finalPublic publicFinalBox">
+    <div class="publicFinalLabel">FINAL RESULT</div>
+    <div class="finalIdentity"><div class="athlete">${esc(a.name)}</div><div class="club">${esc(a.club)}</div></div>
+    <div class="finalRounds"><div><span>ROUND 1</span><strong>${fmt3(r1?.total||0)}</strong></div><div><span>ROUND 2</span><strong>${fmt3(r2?.total||0)}</strong></div></div>
+    <div class="finalScorePanel"><span>FINAL SCORE</span><strong>${fmt3(a.finalScore)}</strong><small>(ROUND 1 + ROUND 2) ÷ 2</small></div>
+    <div class="finalRank">RANK <strong>#${current?.position||"—"}</strong></div>
+  </div></main>`
+}
+
+function scoreTable(r){
+  return `<table class="ptable"><thead><tr><th>Judge</th><th>Accuracy</th><th>Presentation</th></tr></thead><tbody>${r.judges.map((j,i)=>`<tr><td>Judge ${i+1}</td><td class="${r.accuracyExcluded.includes(i)?"excluded":""}"><span class="scoreValue">${fmt1Public(j.accuracy)}</span>${r.accuracyExcluded.includes(i)?" <small class=\"excludedBadge\">EXCLUE</small>":""}</td><td class="${r.presentationExcluded.includes(i)?"excluded":""}"><span class="scoreValue">${fmt1Public(j.presentation)}</span>${r.presentationExcluded.includes(i)?" <small class=\"excludedBadge\">EXCLUE</small>":""}</td></tr>`).join("")}</tbody></table>`
+}
+function rankingHTML(list){
+  return `<div class="ranking">${list.map(r=>`<div class="rank"><b>${r.position}</b><span>${esc(r.name)}<small>${esc(r.club)}</small></span><strong>${fmt3(r.finalScore)}</strong>${(STATE.phase==="FINAL"||STATE.phase==="DIRECT FINAL")?`<em class="${medal(r.position).toLowerCase()}">${medal(r.position)}</em>`:""}</div>`).join("")}</div>`
+}
+
+function podiumHTML(){const all=computeRanking();const r=all.slice(0,4);const ordered=[r[1],r[0],r[2],r[3]].filter(Boolean);return `<div class="podiumWrap"><div class="podiumHeader"><div class="podiumCrown">FINAL PODIUM · ${esc(STATE.participation||"INDIVIDUAL")}</div><div class="podiumMetaLarge"><span>CLASS <b>${esc(STATE.classCode||"—")}</b></span><span>CATEGORY <b>${esc(STATE.category||"—")}</b></span><span>SEXE <b>${esc(STATE.gender||"—")}</b></span></div></div><div class="podium">${ordered.map(x=>`<div class="pod ${medal(x.position).toLowerCase()} pos${x.position}"><div class="medalIcon">${x.position===1?"🥇":x.position===2?"🥈":"🥉"}</div><b>${medalRank(x.position)}</b><span>${medal(x.position)}</span><h2>${esc(x.name)}${x.wonByPresentation?`<span class="presentationTieRemark">WIN BY PRESENTATION NOTE</span>`:""}</h2><small>${esc(x.club)}</small><strong>${fmt3(x.finalScore)}</strong></div>`).join("")}</div></div>`}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}

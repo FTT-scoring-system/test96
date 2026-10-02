@@ -1,0 +1,1178 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap");
+:root{--bg:#05070d;--panel:#0b0f19;--panel2:#121a29;--line:#29374d;--text:#f5f7fb;--muted:#93a0b5;--cyan:#53d8ff;--green:#49e3a6;--red:#ff5475;--gold:#f5c75a;--silver:#dce4ee;--bronze:#d98d5d;--violet:#a98bff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"Rajdhani",Segoe UI,Arial,sans-serif}button,input,select{font:inherit}.topbar{height:70px;background:#071625;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 20px}.brand{font-family:"Cinzel",serif;font-weight:900;letter-spacing:.08em;text-shadow:0 0 18px rgba(83,216,255,.18)} .brand span{color:var(--cyan)} .mini-art{color:var(--gold)!important;margin-right:8px;font-size:24px}.brand span{color:var(--cyan)}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{font-family:"Rajdhani",sans-serif;letter-spacing:.04em;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:11px 15px;border-radius:8px;font-weight:800}.btn.primary{background:#075e7e;border-color:var(--cyan)}.btn.success{background:#0c654c;border-color:var(--green)}.btn.danger{background:#6d1d31;border-color:var(--red)}.layout{max-width:1800px;margin:auto;padding:14px;display:grid;grid-template-columns:380px 1fr;gap:14px}.card{background:linear-gradient(180deg,var(--panel),#091625);border:1px solid var(--line);border-radius:12px;padding:15px;margin-bottom:14px;box-shadow:0 8px 30px #0005}.card h1,.card h2{margin-top:0;font-family:"Cinzel",serif;letter-spacing:.03em}.grid{display:grid;gap:9px}.grid.two{grid-template-columns:1fr 1fr}label{font-size:12px;color:var(--muted);font-weight:900;text-transform:uppercase}input,select{width:100%;margin-top:5px;padding:10px;background:#06111e;border:1px solid var(--line);border-radius:7px;color:var(--text)}hr{border:0;border-top:1px solid var(--line);margin:15px 0}.athleteRow{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--line)}.athleteRow small,.rank small{display:block;color:var(--muted);margin-top:3px}.selected{color:var(--cyan)}.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.kpi div{background:#081827;border:1px solid var(--line);border-radius:8px;padding:11px;color:var(--muted)}.kpi b{display:block;color:var(--text);font-size:20px;margin-top:4px}.current h1{font-size:42px;margin:25px 0 5px}.current p{color:var(--muted)}.bigActions .btn{padding:15px 20px}.judgeGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.judgeBox{padding:12px;border:1px solid var(--line);border-radius:9px;background:#081827}.judgeBox b{display:block;color:var(--cyan);margin-bottom:8px}.judgeBox label{display:block;margin:8px 0}.penalty{margin:15px 0}.penalty label{text-transform:none;color:var(--text);display:flex;align-items:center;gap:8px}.penalty input{width:auto}.hero{text-align:center;padding:90px 20px}.hero h1{font-size:60px;color:var(--cyan)}.muted{color:var(--muted)}.tiePoomsae{font-size:42px;font-weight:1000;color:var(--cyan);margin:20px 0}.public{min-height:100vh;background:radial-gradient(circle at 50% 15%,#123b60,#040a11 65%);text-align:center}.phead{padding:25px 4vw;border-bottom:1px solid #254a69}.title{font-size:clamp(22px,3vw,42px);font-weight:1000}.phase{font-size:clamp(18px,2.5vw,32px);font-weight:1000;color:var(--cyan);letter-spacing:.1em;margin-top:8px}.meta{font-size:clamp(18px,2vw,30px);color:var(--muted);margin-top:6px}.athlete{font-size:clamp(38px,6vw,92px);font-weight:1000;line-height:1;margin-top:30px}.club{font-size:clamp(18px,2.3vw,34px);color:var(--muted);margin-top:10px}.round{font-size:32px;font-weight:1000;color:var(--cyan);margin-top:30px}.poomsae{font-size:26px;margin-top:8px}.timer{font-size:clamp(110px,20vw,280px);font-weight:1000;line-height:.9;font-variant-numeric:tabular-nums;margin:40px 0}.timer.expired{color:var(--red)}.calc{font-size:clamp(34px,6vw,82px);font-weight:1000;margin-top:18vh;letter-spacing:.06em}.publicBox{width:min(1250px,94vw);margin:35px auto}.ptable{width:100%;border-collapse:collapse;font-size:clamp(18px,2vw,30px)}.ptable th,.ptable td{padding:12px;border-bottom:1px solid #294a64}.ptable th{color:var(--muted);font-size:.65em}.excluded{color:var(--red);text-decoration:line-through;font-weight:1000}.excluded small{font-size:.45em;text-decoration:none}.resultCards{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}.resultCards div{padding:20px;border:1px solid var(--line);border-radius:12px;background:#071624cc}.resultCards b{color:var(--muted)}.resultCards strong{display:block;font-size:clamp(45px,6vw,85px);margin-top:5px}.roundScore{font-size:clamp(80px,12vw,170px);font-weight:1000;color:var(--cyan);line-height:1;margin-top:25px}.label{color:var(--muted)}.ranking{text-align:left}.rank{display:grid;grid-template-columns:80px 1fr 160px 130px;align-items:center;gap:12px;padding:15px;border-bottom:1px solid var(--line);font-size:clamp(20px,2vw,32px)}.rank>b{font-size:42px}.rank strong{text-align:right}.rank em{text-align:center;font-style:normal;font-weight:1000}.gold{color:var(--gold)}.silver{color:var(--silver)}.bronze{color:var(--bronze)}.podium{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}.pod{padding:24px 10px;border:1px solid var(--line);border-radius:15px;background:#071624}.pod>b{display:block;font-size:65px}.pod span{font-weight:1000}.pod h2{min-height:60px}.pod strong{display:block;font-size:28px;margin-top:12px}.tie .vs{font-size:clamp(35px,6vw,90px);font-weight:1000;margin-top:15vh}.tie .vs span{color:var(--cyan);margin:0 25px}.tiePoomsae{font-size:clamp(38px,5vw,80px)}
+
+/* Championship visual system */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 10%,rgba(83,216,255,.08),transparent 26%),radial-gradient(circle at 88% 90%,rgba(169,139,255,.07),transparent 30%);z-index:-1}
+.phaseTag{font-family:"Cinzel",serif;color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem}.goldBtn{background:linear-gradient(135deg,#8d6a18,#f5c75a,#8d6a18)!important;color:#17120a!important;border-color:#ffe39a!important;box-shadow:0 8px 28px rgba(245,199,90,.2)}
+.phead{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(12,18,31,.98),rgba(5,8,14,.94));}.phead:after{content:"";position:absolute;inset:auto -10% 0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--cyan),var(--gold),transparent);opacity:.7}.title,.phase,.athlete{font-family:"Cinzel",serif}.taekwondo-art{position:absolute;right:4vw;top:5px;width:180px;height:150px;opacity:.10;transform:scale(1.15)}.taekwondo-art svg{width:100%;height:100%;fill:none;stroke:var(--cyan);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.publicBox h1{font-family:"Cinzel",serif;letter-spacing:.05em}.podiumWrap{padding:28px 0 10px}.podiumCrown{font-family:"Cinzel",serif;font-size:clamp(18px,2vw,28px);letter-spacing:.25em;color:var(--gold);margin-bottom:18px;text-shadow:0 0 22px rgba(245,199,90,.25)}.podium{display:grid;grid-template-columns:1fr 1.2fr 1fr;align-items:end;gap:18px;max-width:1200px;margin:0 auto}.pod{position:relative;min-height:290px;padding:24px 16px 28px;border:1px solid rgba(255,255,255,.12);border-radius:22px 22px 10px 10px;background:linear-gradient(180deg,rgba(20,28,43,.96),rgba(8,11,18,.98));box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}.pod:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(255,255,255,.08),transparent 45%);pointer-events:none}.pod.pos1{min-height:370px;border-color:rgba(245,199,90,.7);box-shadow:0 28px 80px rgba(245,199,90,.15)}.pod.pos2{min-height:315px;border-color:rgba(220,228,238,.45)}.pod.pos3{min-height:280px;border-color:rgba(217,141,93,.45)}.medalIcon{font-size:40px;line-height:1;margin-bottom:6px}.pod b{font-family:"Cinzel",serif;font-size:62px;display:block}.pod span{font-family:"Cinzel",serif;font-size:14px;letter-spacing:.18em}.pod h2{font-family:"Cinzel",serif;font-size:clamp(18px,2.1vw,30px);min-height:62px;margin:18px 0 5px}.pod strong{font-family:"Rajdhani",sans-serif;font-size:34px;margin-top:14px}.rankingCard,.podiumCard{background:linear-gradient(145deg,rgba(16,23,36,.98),rgba(7,10,17,.98))}.rankingCard h1,.podiumCard h1{font-size:38px}.public .podium{margin-top:20px}.public .pod{backdrop-filter:blur(8px)}
+@media(max-width:800px){.podium{grid-template-columns:1fr;align-items:stretch}.pod,.pod.pos1,.pod.pos2,.pod.pos3{min-height:250px}.taekwondo-art{right:-35px;opacity:.06}}
+
+@media(max-width:1050px){.layout{grid-template-columns:1fr}.kpi{grid-template-columns:1fr 1fr}.podium{grid-template-columns:1fr 1fr}.rank{grid-template-columns:55px 1fr 100px 90px}}
+
+/* Final score / 2-round workflow */
+.finalScoreCard .kpi>div b{font-size:1.25rem}
+.finalBreakdown,.finalPublicGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.finalBreakdown>div,.finalPublicGrid>div{padding:20px;border-radius:14px;background:rgba(255,255,255,.05);text-align:center}
+.finalBreakdown span,.finalPublicGrid span{display:block;font-size:.8rem;opacity:.7;margin-bottom:8px}
+.finalBreakdown strong,.finalPublicGrid strong{font-size:2rem}
+.finalPublished{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 20px;border-radius:14px;margin:18px 0;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35)}
+.currentRank{text-align:center;font-size:1.4rem;margin-top:24px}.currentRank strong{font-size:2.2rem}
+@media(max-width:800px){.finalBreakdown,.finalPublicGrid{grid-template-columns:1fr}.finalPublished{flex-direction:column;align-items:flex-start}}
+
+/* Grand opening / competition identity */
+.landing{min-height:100vh;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 35%,#17385a 0%,#08111d 35%,#03060b 78%);font-family:"Rajdhani",sans-serif}.landing:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 42%,rgba(83,216,255,.05) 50%,transparent 58%),radial-gradient(circle at 50% 100%,rgba(245,199,90,.08),transparent 35%);pointer-events:none}.landingGlow{position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(60px);opacity:.16}.glowA{background:#53d8ff;left:-170px;top:-140px}.glowB{background:#a98bff;right:-180px;bottom:-160px}.landingCard{position:relative;z-index:2;width:min(860px,90vw);padding:46px 50px 30px;text-align:center;border:1px solid rgba(255,255,255,.14);border-radius:30px;background:linear-gradient(180deg,rgba(11,19,32,.94),rgba(4,8,15,.97));box-shadow:0 30px 100px rgba(0,0,0,.55),0 0 80px rgba(83,216,255,.08);backdrop-filter:blur(14px)}.logoRing{width:150px;height:150px;margin:0 auto 18px;filter:drop-shadow(0 0 22px rgba(83,216,255,.16))}.fedLogo{width:100%;height:100%}.eyebrow{font-size:13px;letter-spacing:.35em;color:var(--cyan);font-weight:800}.landingCard h1{font-family:"Cinzel",serif;font-size:clamp(30px,5vw,58px);line-height:1.1;margin:14px 0 8px;text-shadow:0 0 28px rgba(255,255,255,.08)}.landingCard h2{font-family:"Cinzel",serif;font-size:clamp(15px,2vw,23px);letter-spacing:.12em;color:var(--gold);margin:0}.landingRule{height:1px;width:min(470px,80%);margin:24px auto;background:linear-gradient(90deg,transparent,var(--gold),var(--cyan),transparent)}.landingSubtitle{font-size:15px;letter-spacing:.22em;color:var(--muted);font-weight:700}.landingStatus{display:inline-block;margin-top:18px;padding:7px 15px;border:1px solid rgba(83,216,255,.35);border-radius:999px;color:var(--cyan);font-weight:800;letter-spacing:.18em;font-size:12px}.waitingText{color:#cbd4e2;letter-spacing:.14em;margin:30px 0 15px;animation:pulseWait 2s ease-in-out infinite}.launchBtn{margin:30px auto 8px;min-width:300px;padding:17px 28px!important;font-size:18px!important;letter-spacing:.08em!important;border-radius:12px!important}.rights{margin-top:30px;font-size:10px;letter-spacing:.18em;color:#65758c}.landingArt{position:absolute;z-index:1;width:260px;height:300px;opacity:.10}.landingArt svg{width:100%;height:100%;fill:none;stroke:var(--cyan);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.leftArt{left:3vw;bottom:5vh;transform:rotate(-7deg)}.rightArt{right:3vw;top:6vh;transform:scaleX(-1) rotate(-7deg);stroke:var(--gold)}.setupOverlay{position:fixed;z-index:1000;inset:0;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);overflow-y:auto;overscroll-behavior:contain}.setupOverlay.open{display:grid}.setupModal{width:min(820px,96vw);max-height:calc(100vh - 40px);overflow-y:auto;overscroll-behavior:contain;border:1px solid rgba(245,199,90,.45);border-radius:24px;background:linear-gradient(145deg,#101a29,#060b13);box-shadow:0 30px 100px #000b;padding:28px}.setupTop{display:grid;grid-template-columns:90px 1fr;gap:20px;align-items:center}.setupTop .fedLogo{width:90px;height:90px}.setupTop h2{font-family:"Cinzel",serif;margin:5px 0;font-size:clamp(20px,3vw,30px)}.setupTop p{margin:0;color:var(--muted)}.setupGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:25px}.setupGrid label:first-child{grid-column:1/-1}.phasePreview{margin:20px 0;padding:20px;text-align:center;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line)}.phasePreview span{display:block;font-family:"Cinzel",serif;font-size:30px;font-weight:900;letter-spacing:.12em}.phasePreview .direct{color:var(--green)}.phasePreview .semi{color:var(--gold)}.phasePreview small{display:block;margin-top:5px;color:var(--muted);letter-spacing:.12em}.setupActions{display:flex;justify-content:flex-end;gap:10px}.setupActions .btn{min-width:170px}@keyframes pulseWait{0%,100%{opacity:.45}50%{opacity:1}}
+@media(max-width:800px){.landingCard{padding:30px 20px 24px}.landingArt{display:none}.setupGrid{grid-template-columns:1fr}.setupGrid label:first-child{grid-column:auto}.setupTop{grid-template-columns:70px 1fr}.setupTop .fedLogo{width:70px;height:70px}.setupActions{flex-direction:column}.setupActions .btn{width:100%}.launchBtn{min-width:0;width:100%}}
+
+.cardMini{margin-top:16px;padding:18px;border:1px solid rgba(245,199,90,.25);background:rgba(255,255,255,.025);border-radius:18px}.twoCols{grid-template-columns:repeat(2,minmax(0,1fr))}.lockNotice{margin-top:12px;padding:10px 14px;border-radius:10px;background:rgba(245,199,90,.08);color:#f5c75a;font-weight:700;letter-spacing:.04em}.fixedPoomsae input{opacity:.85;cursor:not-allowed}.fixedPoomsae small{display:block;margin-top:7px;color:#f5c75a;font-weight:700;letter-spacing:.08em}@media(max-width:800px){.twoCols{grid-template-columns:1fr}}
+
+/* Setup modal scrolling fix: keep the entire configuration accessible on short screens. */
+.setupModal{scrollbar-width:thin;scrollbar-color:rgba(245,199,90,.65) rgba(255,255,255,.05)}
+.setupModal::-webkit-scrollbar{width:8px}.setupModal::-webkit-scrollbar-track{background:rgba(255,255,255,.04);border-radius:8px}.setupModal::-webkit-scrollbar-thumb{background:rgba(245,199,90,.65);border-radius:8px}.setupModal::-webkit-scrollbar-thumb:hover{background:rgba(83,216,255,.75)}
+@media(max-height:760px){.setupOverlay{align-items:start;padding:12px}.setupModal{max-height:calc(100vh - 24px);padding:20px}.setupTop{gap:14px}.setupTop .fedLogo{max-height:70px}.setupGrid{margin-top:16px;gap:10px}.cardMini{margin-top:12px;padding:14px}.phasePreview{margin:12px 0;padding:14px}}
+
+/* Locked athlete roster */
+.singleOperator{grid-template-columns:430px 1fr}.athleteFixedCard{position:sticky;top:14px}.sectionHeader{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.rowActions{display:flex;gap:6px}.absentRow{opacity:.55;border-left:3px solid var(--red);padding-left:8px}.athleteSetup{margin-top:16px}.setupAthleteFields{display:grid;gap:8px;margin-top:12px}.setupAthleteItem{display:grid;grid-template-columns:34px 1.4fr 1fr;gap:8px;align-items:center}.athNo{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(83,216,255,.08);border:1px solid var(--line);color:var(--cyan);font-weight:900}.setupAthleteItem input{margin-top:0}.athleteFixedCard h2{font-size:20px;margin-bottom:4px}.athleteFixedCard .btn{white-space:nowrap}@media(max-width:1050px){.singleOperator{grid-template-columns:1fr}.athleteFixedCard{position:static}}@media(max-width:700px){.setupAthleteItem{grid-template-columns:30px 1fr}.setupAthleteItem .athClub{grid-column:2}.sectionHeader{flex-direction:column}}
+/* Live public setup preview */
+.publicSetupLive{margin:20px auto 0;max-width:720px;padding:18px 22px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(7,13,24,.58);box-shadow:0 12px 40px rgba(0,0,0,.25);font-family:Rajdhani,sans-serif;letter-spacing:.08em;text-transform:uppercase;line-height:1.8}
+.publicSetupLive>div{margin:3px 0}.liveAthleteList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;text-align:left;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1);max-height:220px;overflow:auto}.liveAthleteList span{font-size:.92rem;color:rgba(255,255,255,.82)}
+.landingButtons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}.landingButtons .launchBtn{margin-top:0}
+@media(max-width:700px){.liveAthleteList{grid-template-columns:1fr}.landingButtons{flex-direction:column;align-items:stretch}}
+
+/* Championship final ranking: four visible finalists and oversized identity */
+.ranking .rank{min-height:92px;padding:18px 20px;font-size:clamp(24px,2.4vw,38px)}
+.ranking .rank>b{font-size:clamp(44px,4vw,68px);font-family:"Cinzel",serif}
+.ranking .rank span{font-family:"Cinzel",serif;font-weight:800;font-size:clamp(24px,2.5vw,40px)}
+.ranking .rank small{font-family:"Rajdhani",sans-serif;font-size:clamp(20px,1.8vw,30px);font-weight:700;letter-spacing:.04em}
+.ranking .rank strong{font-size:clamp(32px,3vw,52px);font-family:"Rajdhani",sans-serif;font-weight:900}
+.podium{grid-template-columns:repeat(4,minmax(0,1fr));align-items:end}
+.pod.pos4{min-height:245px;border-color:rgba(147,160,181,.4)}
+.pod.pos4 .medalIcon{font-size:34px}
+.pod.pos4 strong{font-size:32px}
+.pod h2{font-size:clamp(20px,2.3vw,34px)}
+.pod small{font-size:clamp(18px,1.8vw,28px);font-weight:700}
+.finalScoreCard .current h1{font-size:clamp(52px,5vw,90px);font-family:"Cinzel",serif}
+.finalScoreCard .current p{font-size:clamp(28px,2.5vw,42px);font-weight:700}
+.finalScoreCard .roundScore{font-size:clamp(100px,14vw,220px)}
+.finalPublic .roundScore{font-size:clamp(110px,16vw,250px)}
+.finalPublic .currentRank{font-size:clamp(28px,3vw,46px)}
+.finalPublic .currentRank strong{font-size:clamp(44px,5vw,76px)}
+@media(max-width:1100px){.podium{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.podium{grid-template-columns:1fr}.ranking .rank{grid-template-columns:52px 1fr 120px 70px}.ranking .rank em{display:none}}
+
+/* Official Tunisian Taekwondo Federation logo */
+.officialFedLogo{display:block;width:100%;height:100%;object-fit:contain;border-radius:14px;}
+
+
+/* Official logo — transparent, integrated with the dark illustration system */
+.fedLogoImg,.officialFedLogo{display:block;object-fit:contain;background:transparent!important;mix-blend-mode:screen;filter:drop-shadow(0 0 16px rgba(83,216,255,.22)) drop-shadow(0 8px 18px rgba(0,0,0,.35))}
+.logoRing{display:grid;place-items:center;background:radial-gradient(circle,rgba(83,216,255,.10),transparent 68%);border-radius:28px}
+.topFedLogo{width:132px;height:48px;object-fit:contain;margin:0 12px 0 0;vertical-align:middle;filter:drop-shadow(0 0 10px rgba(83,216,255,.18));mix-blend-mode:screen}
+.brand{display:flex;align-items:center;gap:6px}
+.publicBrand{position:relative;z-index:3;display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:10px}
+.publicFedLogo{width:clamp(190px,20vw,300px);height:clamp(60px,7vw,95px);object-fit:contain;mix-blend-mode:screen;filter:drop-shadow(0 0 18px rgba(83,216,255,.2))}
+.publicBrand span{font-family:"Cinzel",serif;font-size:clamp(12px,1.25vw,20px);letter-spacing:.13em;color:#eaf3ff}
+/* Button motion / polished micro-interactions */
+.btn{position:relative;overflow:hidden;cursor:pointer;isolation:isolate;transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease,border-color .25s ease,filter .25s ease}
+.btn::before{content:"";position:absolute;z-index:-1;top:-140%;left:-45%;width:28%;height:380%;transform:rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);transition:left .6s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.btn::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);pointer-events:none}
+.btn:hover{transform:translateY(-3px) scale(1.015);filter:brightness(1.08);box-shadow:0 12px 30px rgba(83,216,255,.18)}
+.btn:hover::before{left:125%}
+.btn:active{transform:translateY(1px) scale(.985);filter:brightness(.98);box-shadow:0 4px 12px rgba(0,0,0,.35)}
+.btn:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.btn:disabled{cursor:not-allowed;transform:none;filter:saturate(.35);opacity:.5;box-shadow:none}
+.btn.primary:hover{box-shadow:0 12px 34px rgba(83,216,255,.3)}
+.btn.success:hover{box-shadow:0 12px 34px rgba(73,227,166,.28)}
+.btn.danger:hover{box-shadow:0 12px 34px rgba(255,84,117,.28)}
+.goldBtn{animation:goldPulse 2.8s ease-in-out infinite}
+.goldBtn:hover{animation:none;box-shadow:0 14px 38px rgba(245,199,90,.4)!important}
+.launchBtn{animation:launchFloat 3s ease-in-out infinite}
+.launchBtn:hover{animation:none}
+@keyframes goldPulse{0%,100%{box-shadow:0 8px 26px rgba(245,199,90,.12)}50%{box-shadow:0 10px 36px rgba(245,199,90,.3)}}
+@keyframes launchFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@media(max-width:800px){.publicBrand{flex-direction:column;gap:6px}.publicFedLogo{width:230px;height:72px}.topFedLogo{width:105px;height:40px;margin-right:6px}}
+
+/* Oversized judge score entry fields for fast operator input */
+.judgeBox input[type="number"]{font-family:"Rajdhani",sans-serif;font-size:clamp(28px,3vw,44px);font-weight:900;line-height:1.05;text-align:center;padding:14px 10px;min-height:62px;letter-spacing:.04em;border-width:2px}
+.judgeBox input[type="number"]:focus{outline:none;transform:scale(1.02);box-shadow:0 0 0 3px rgba(83,216,255,.14),0 0 24px rgba(83,216,255,.12)}
+.judgeBox label{font-size:15px}
+@media(max-width:800px){.judgeBox input[type="number"]{font-size:30px;min-height:56px}}
+
+.tieBtn{animation:pulseTie 1.8s ease-in-out infinite;border:1px solid rgba(255,170,0,.8)}
+@keyframes pulseTie{0%,100%{box-shadow:0 0 0 rgba(255,170,0,0)}50%{box-shadow:0 0 24px rgba(255,170,0,.38)}}
+.tieRemark{display:block!important;font-size:.72rem!important;letter-spacing:.04em;margin-top:4px;text-transform:uppercase}
+.tieScores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.tieLiveScore{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px}
+@media(max-width:900px){.tieScores{grid-template-columns:1fr}}
+.tieOriginals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px auto;max-width:850px}.tieOriginals>div{padding:18px;border:1px solid var(--line);border-radius:14px;background:#071624}.tieOriginals b{display:block;color:var(--muted);font-size:16px}.tieOriginals strong{display:block;font-size:48px;margin-top:6px}@media(max-width:700px){.tieOriginals{grid-template-columns:1fr}}
+
+/* 2026 UI refinements: larger setup controls and full-fit public display */
+.setupModal{width:min(1100px,97vw);padding:36px}.setupTop h2{font-size:clamp(26px,3.5vw,40px)}.setupGrid label{font-size:18px;font-weight:800}.setupGrid input,.setupGrid select{font-size:20px;min-height:58px;padding:12px 14px}.setupAthleteItem input{font-size:19px;min-height:54px}.phasePreview span{font-size:36px}
+.public{min-height:100vh;overflow:hidden}.publicBox{max-width:96vw!important;max-height:calc(100vh - 24px);overflow:hidden;padding:clamp(12px,1.5vw,26px)!important}.public .phead{padding:clamp(8px,1vh,18px) 2vw 0!important}.public .publicBrand{margin-bottom:4px}.public .publicFedLogo{width:clamp(150px,16vw,250px);height:clamp(45px,5vw,78px)}.public .title{font-size:clamp(22px,3vw,42px)!important}.public .phase,.public .meta{font-size:clamp(11px,1.2vw,18px)!important}.public .athlete{font-size:clamp(24px,3vw,44px)!important}.public .club{font-size:clamp(13px,1.5vw,20px)!important}.public .timer{font-size:clamp(54px,7vw,110px)!important;line-height:.95!important;margin:8px 0!important}.public .round,.public .poomsae{font-size:clamp(18px,2vw,30px)!important;margin:5px 0!important}.public .publicBox h1{font-size:clamp(24px,3vw,42px)!important;margin:6px 0!important}.public .ranking{gap:5px!important}.public .rank{padding:8px 12px!important;min-height:48px!important}.public .rank strong{font-size:clamp(20px,2.2vw,34px)!important}.public .rank span{font-size:clamp(14px,1.5vw,22px)!important}.public .tieScores{gap:10px;margin-top:10px}.public .tieLiveScore{padding:8px}.public .ptable{font-size:clamp(12px,1.2vw,17px)!important}.public .ptable td,.public .ptable th{padding:5px!important}.public .tieOriginals{margin:10px auto}.public .tieOriginals strong{font-size:clamp(30px,4vw,52px)}.public .podium{gap:8px!important;margin-top:8px!important}.public .pod{min-height:190px!important;padding:12px 10px 14px!important}.public .pod.pos1{min-height:230px!important}.public .pod h2{font-size:clamp(14px,1.6vw,24px)!important;min-height:40px;margin:8px 0 3px}.public .pod strong{font-size:clamp(24px,2.5vw,36px)!important}.public .medalIcon{font-size:28px}.public .pod b{font-size:42px}
+@media(max-height:760px){.public .publicBox{max-height:calc(100vh - 10px);padding:10px!important}.public .rank{padding:5px 8px!important}.public .tieOriginals{margin:6px auto}.public .pod{min-height:150px!important}.public .pod.pos1{min-height:185px!important}}
+
+
+/* Score entry: keyboard arrows change by 0.1 and invalid values are highlighted immediately. */
+.judgeBox input[type="number"].invalid-score{border-color:var(--red)!important;color:var(--red)!important;background:rgba(255,60,80,.10)!important;box-shadow:0 0 0 2px rgba(255,60,80,.18),0 0 18px rgba(255,60,80,.12)!important;}
+.judgeBox input[type="number"]:invalid{border-color:var(--red);}
+.judgeBox input[type="number"]::-webkit-inner-spin-button,.judgeBox input[type="number"]::-webkit-outer-spin-button{opacity:1;}
+
+/* =========================================================
+   PUBLIC DISPLAY v3 — HDMI / TV / FULLSCREEN
+   Optimized for 16:9 competition screens
+   ========================================================= */
+html:has(.public), body:has(.public){margin:0!important;padding:0!important;overflow:hidden!important;background:#03070d!important}
+.public{
+  min-height:100vh;width:100vw;box-sizing:border-box;overflow:hidden;
+  position:relative;text-align:center;color:#f5f7fb;
+  background:
+    radial-gradient(ellipse at 50% -12%,rgba(42,104,150,.34),transparent 48%),
+    radial-gradient(ellipse at 100% 100%,rgba(122,91,32,.12),transparent 38%),
+    linear-gradient(180deg,#08111d 0%,#03070d 55%,#02050a 100%);
+}
+.public:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.32;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px);
+  background-size:70px 70px;mask-image:linear-gradient(to bottom,#000,transparent 80%);
+}
+.publicTopBar{
+  position:absolute;z-index:20;top:0;left:0;right:0;height:54px;padding:0 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  background:rgba(2,6,11,.72);border-bottom:1px solid rgba(255,255,255,.07);
+  backdrop-filter:blur(10px);font-family:Rajdhani,sans-serif;
+}
+.publicTopBrand{font-weight:900;letter-spacing:.16em;font-size:18px}.publicTopBrand span{color:var(--cyan)}
+.publicTopMeta{display:flex;gap:12px;align-items:center;color:#aab6c7;font-weight:700;letter-spacing:.08em;font-size:14px}
+.publicFsBtn{
+  border:1px solid rgba(83,216,255,.35);background:rgba(83,216,255,.08);color:#dff8ff;
+  border-radius:8px;padding:7px 12px;font:700 13px Rajdhani,sans-serif;cursor:pointer;
+}
+.publicFsBtn:hover{background:rgba(83,216,255,.16)}
+.publicHeader{
+  position:relative!important;z-index:2;margin:0!important;padding:76px 5vw 30px!important;
+  min-height:210px;box-sizing:border-box;border:0!important;background:transparent!important;
+}
+.publicHeader:after{display:none}
+.fedLine{display:flex;align-items:center;justify-content:center;gap:18px}
+.publicHeader .publicFedLogo{width:clamp(100px,10vw,165px);height:auto;max-height:68px;object-fit:contain}
+.fedName{font:700 clamp(12px,1.15vw,20px) Rajdhani,sans-serif;letter-spacing:.15em;color:#b8c5d5}
+.competitionTitle{font:900 clamp(24px,3.1vw,50px) Cinzel,serif;letter-spacing:.09em;margin-top:10px}
+.publicHeader .phase{font-size:clamp(14px,1.5vw,25px);margin-top:7px}
+.publicHeader .meta{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:8px 20px;
+  font:700 clamp(13px,1.2vw,19px) Rajdhani,sans-serif;letter-spacing:.08em;margin-top:8px;
+}
+.publicHeader .meta span:not(:last-child):after{content:"";margin-left:20px;border-right:1px solid #344557}
+.publicHeader .athlete{
+  margin-top:20px;font-size:clamp(34px,5.2vw,82px);line-height:1.03;text-shadow:0 8px 40px rgba(0,0,0,.45)
+}
+.publicHeader .club{font-size:clamp(17px,1.8vw,28px);margin-top:7px}
+.publicStage{position:relative;z-index:2;min-height:calc(100vh - 210px);display:grid;place-items:center;padding:20px 4vw 55px;box-sizing:border-box}
+.publicPerformance{width:min(1500px,94vw);margin-top:-20px}
+.roundPill{
+  display:inline-flex;padding:8px 18px;border:1px solid rgba(83,216,255,.32);border-radius:999px;
+  background:rgba(83,216,255,.06);font:800 clamp(14px,1.3vw,20px) Rajdhani,sans-serif;letter-spacing:.16em;color:#9dddec
+}
+.poomsaeLabel{font:800 14px Rajdhani,sans-serif;letter-spacing:.32em;color:#77889d;margin-top:28px}
+.publicPerformance .poomsae{font:900 clamp(32px,4.5vw,72px) Cinzel,serif;color:#f7f9fc;margin-top:7px;text-shadow:0 0 35px rgba(83,216,255,.12)}
+.publicPerformance .timer{
+  margin:35px 0 0!important;font:900 clamp(130px,22vw,310px) Rajdhani,sans-serif;line-height:.72;
+  letter-spacing:.03em;color:#f4f8ff;text-shadow:0 12px 55px rgba(83,216,255,.16)
+}
+.timerHint{margin-top:30px;font:800 13px Rajdhani,sans-serif;letter-spacing:.3em;color:#617388}
+.publicPerformance .timer.expired{color:#ff6b6b;text-shadow:0 0 50px rgba(255,80,80,.25)}
+.publicSectionTitle{
+  font:800 clamp(15px,1.4vw,23px) Cinzel,serif;letter-spacing:.25em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:18px
+}
+.publicBox{
+  width:min(1500px,94vw)!important;margin:0 auto!important;padding:30px 36px!important;
+  box-sizing:border-box;border:1px solid rgba(255,255,255,.10)!important;border-radius:24px!important;
+  background:linear-gradient(145deg,rgba(13,23,37,.96),rgba(4,9,16,.97))!important;
+  box-shadow:0 25px 100px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.035);
+}
+.publicResultBox .resultHeroScore{font:900 clamp(100px,15vw,230px) Rajdhani,sans-serif;line-height:.82;color:var(--cyan);text-shadow:0 0 45px rgba(83,216,255,.2)}
+.resultHeroLabel{font:800 13px Rajdhani,sans-serif;letter-spacing:.28em;color:#708096;margin-top:18px}
+.publicResultBox .resultCards{max-width:900px;margin:28px auto 24px;gap:14px}
+.publicResultBox .resultCards div{padding:18px;background:rgba(255,255,255,.025);border-radius:14px}
+.publicResultBox .resultCards strong{font-size:clamp(38px,4.5vw,70px)}
+.publicResultBox .ptable{max-width:1050px;margin:0 auto;font-size:clamp(14px,1.45vw,22px)}
+.publicResultBox .ptable th,.publicResultBox .ptable td{padding:9px 12px}
+.publicLoading{font:900 clamp(30px,4.5vw,70px) Cinzel,serif;letter-spacing:.08em}
+.publicLoading small{display:block;font:700 14px Rajdhani,sans-serif;color:#708096;letter-spacing:.28em;margin-top:12px}
+.loaderRing{
+  width:78px;height:78px;margin:0 auto 30px;border-radius:50%;
+  border:3px solid rgba(255,255,255,.08);border-top-color:var(--cyan);border-right-color:var(--gold);
+  animation:publicSpin 1s linear infinite;
+}
+@keyframes publicSpin{to{transform:rotate(360deg)}}
+.publicRankingBox{padding:24px 30px!important}
+.publicRankingBox .ranking{max-height:calc(100vh - 310px);overflow:hidden}
+.publicRankingBox .rank{min-height:64px;padding:10px 14px;grid-template-columns:70px 1fr 160px 125px}
+.publicRankingBox .rank>b{font-size:34px}.publicRankingBox .rank span{font-size:clamp(20px,2vw,34px)}
+.publicRankingBox .rank small{font-size:clamp(14px,1.2vw,20px)}.publicRankingBox .rank strong{font-size:clamp(25px,2.4vw,40px)}
+.publicPodiumBox h1{font-size:clamp(25px,3vw,48px);margin:0 0 8px}
+.publicPodiumBox .podium{max-width:1250px;gap:18px}
+.publicPodiumBox .pod{min-height:260px!important;padding:20px 14px 24px}
+.publicPodiumBox .pod.pos1{min-height:330px!important}
+.publicPodiumBox .pod h2{font-size:clamp(16px,1.8vw,28px);min-height:50px}
+.publicPodiumBox .pod strong{font-size:clamp(25px,2.5vw,40px)}
+.publicFinalBox{max-width:1450px!important}
+.finalIdentity .athlete{font-size:clamp(34px,4.6vw,72px);margin-top:4px}
+.finalIdentity .club{font-size:clamp(16px,1.7vw,25px)}
+.publicFinalBox .finalPublicGrid{max-width:1100px;margin:28px auto 20px;gap:14px}
+.publicFinalBox .finalPublicGrid>div{padding:20px 12px;border-radius:15px}
+.publicFinalBox .finalPublicGrid span{font-size:clamp(12px,1.1vw,18px);letter-spacing:.14em}
+.publicFinalBox .finalPublicGrid strong{font-size:clamp(38px,4.8vw,72px)}
+.publicFinalBox .finalPublicGrid .finalMain{border-color:rgba(83,216,255,.38);background:rgba(83,216,255,.055)}
+.publicFinalBox .finalScoreLarge{font:900 clamp(90px,12vw,190px) Rajdhani,sans-serif;line-height:.8;color:var(--cyan);text-shadow:0 0 45px rgba(83,216,255,.2)}
+.publicFinalBox .currentRank{margin-top:18px;font:800 clamp(18px,1.8vw,28px) Rajdhani,sans-serif;letter-spacing:.15em}
+.publicFinalBox .currentRank strong{font-size:clamp(34px,4vw,60px);color:var(--gold)}
+.publicTie{max-height:calc(100vh - 120px);overflow:auto}
+.publicTie .vs{margin-top:0!important}
+.publicTie .tieScores{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.publicFullscreenReady .publicFsBtn{animation:publicPulse 1.8s ease-in-out infinite}
+@keyframes publicPulse{50%{box-shadow:0 0 0 5px rgba(83,216,255,.08)}}
+@media(max-width:900px){
+ .publicTopMeta{display:none}.publicTopBar{padding:0 14px}.publicHeader{padding-top:68px!important}
+ .publicStage{padding-left:15px;padding-right:15px}.publicBox{padding:22px 16px!important}
+ .publicRankingBox .rank{grid-template-columns:45px 1fr 90px 70px}.publicRankingBox .rank em{display:none}
+ .publicTie .tieScores{grid-template-columns:1fr}
+}
+
+
+/* === PUBLIC DISPLAY PRO 2026 === */
+body:has(#publicRoot){overflow:hidden;background:#02070d}
+.public{min-height:100vh;width:100vw;overflow:hidden;background:
+ radial-gradient(circle at 50% -10%,rgba(31,112,157,.32),transparent 38%),
+ linear-gradient(135deg,#02070d 0%,#07131f 48%,#02070d 100%);color:#f4f8fb;}
+.publicTopBar{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 3vw;border-bottom:1px solid rgba(130,190,220,.16);background:rgba(2,8,14,.72);backdrop-filter:blur(12px)}
+.publicTopBrand{font:900 24px Cinzel,serif;letter-spacing:.12em}.publicTopBrand span{color:#63d9ff}
+.publicTopMeta{display:flex;gap:26px;align-items:center;font:800 15px Rajdhani,sans-serif;letter-spacing:.12em;color:#a8bdcc;text-transform:uppercase}.publicTopMeta span:first-child{color:#f0c86b}
+.publicFsBtn{border:1px solid rgba(99,217,255,.32);background:rgba(17,47,66,.55);color:#dff7ff;border-radius:8px;padding:9px 14px;font-weight:800;cursor:pointer}
+.publicHeader{padding:2.2vh 3vw 1.2vh!important;border-bottom:0!important}.fedLine{display:flex;align-items:center;justify-content:center;gap:16px}.publicFedLogo{width:58px;height:58px;object-fit:contain}.fedName{font:900 clamp(18px,1.8vw,28px) Cinzel,serif;letter-spacing:.07em}.competitionTitle{font:900 clamp(18px,2vw,30px) Rajdhani,sans-serif;letter-spacing:.22em;color:#9fb7c6;margin-top:8px}.phase{font-size:clamp(16px,1.5vw,25px)!important;margin-top:5px!important;color:#63d9ff!important}.meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:clamp(13px,1.25vw,20px)!important;margin-top:7px!important;color:#7f98aa!important}.athlete{font-size:clamp(38px,5vw,78px)!important;margin-top:2.2vh!important;text-shadow:0 8px 35px rgba(0,0,0,.45)}.club{font-size:clamp(16px,1.5vw,24px)!important;margin-top:6px!important;color:#91a8b7!important}
+.publicStage{min-height:calc(100vh - 190px);display:flex;align-items:center;justify-content:center;padding:1vh 3vw 4vh!important}.publicPerformance{width:min(1100px,90vw);text-align:center}.roundPill{display:inline-block;border:1px solid rgba(99,217,255,.35);border-radius:999px;padding:8px 22px;color:#c9edf8;font:900 18px Rajdhani,sans-serif;letter-spacing:.16em;background:rgba(12,43,60,.5)}.poomsaeLabel{margin-top:34px;color:#6e899b;font:800 14px Rajdhani,sans-serif;letter-spacing:.3em}.poomsae{font:900 clamp(32px,4.5vw,70px) Cinzel,serif;margin-top:5px}.timer{font-size:clamp(120px,18vw,260px)!important;margin:4vh 0 1vh!important;line-height:.78!important;text-shadow:0 10px 55px rgba(0,0,0,.5)}.timerHint{font:800 14px Rajdhani,sans-serif;letter-spacing:.25em;color:#7f98aa}
+.publicBox{width:min(1300px,92vw)!important;background:linear-gradient(145deg,rgba(11,28,42,.96),rgba(4,13,21,.96))!important;border:1px solid rgba(126,190,218,.18)!important;border-radius:24px!important;box-shadow:0 25px 80px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.04)!important;padding:clamp(26px,3vw,52px)!important}.publicSectionTitle,.publicFinalLabel{font:900 14px Rajdhani,sans-serif;letter-spacing:.28em;color:#69d9ff;text-transform:uppercase}.resultHeroScore{font-size:clamp(90px,12vw,180px)!important;color:#fff!important;text-shadow:0 0 40px rgba(99,217,255,.18)}.resultHeroLabel{color:#8199aa;letter-spacing:.22em;font-weight:900}.resultCards{display:grid!important;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:30px auto}.resultCards>div{padding:18px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08)}.resultCards b{display:block;color:#7e98a9;letter-spacing:.14em;font-size:13px}.resultCards strong{font-size:clamp(28px,3vw,48px)}
+.publicFinalLabel{text-align:center}.finalIdentity{text-align:center}.finalRounds{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:850px;margin:34px auto 18px}.finalRounds>div{padding:22px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(255,255,255,.035)}.finalRounds span{display:block;color:#7f98aa;font:900 13px Rajdhani,sans-serif;letter-spacing:.2em}.finalRounds strong{display:block;font-size:clamp(40px,4.5vw,70px);margin-top:5px}.finalScorePanel{text-align:center;margin:20px auto;padding:24px;border-radius:22px;background:linear-gradient(180deg,rgba(52,171,216,.12),rgba(255,255,255,.025));border:1px solid rgba(99,217,255,.25);max-width:850px}.finalScorePanel span{display:block;color:#76a6b9;font:900 14px Rajdhani,sans-serif;letter-spacing:.25em}.finalScorePanel strong{display:block;font:900 clamp(90px,11vw,170px) Rajdhani,sans-serif;line-height:.9;color:#63d9ff;text-shadow:0 0 45px rgba(99,217,255,.2)}.finalScorePanel small{color:#7791a0;letter-spacing:.08em}.finalRank{text-align:center;margin-top:18px;font:900 16px Rajdhani,sans-serif;letter-spacing:.2em;color:#7f98aa}.finalRank strong{font-size:clamp(30px,4vw,55px);color:#f0c86b;margin-left:8px}
+.publicRankingBox{padding:20px 24px!important}.publicRankingBox .ranking{max-height:calc(100vh - 250px);overflow:hidden}.publicRankingBox .rank{min-height:70px;padding:11px 18px;grid-template-columns:70px 1fr 150px!important;border-bottom:1px solid rgba(255,255,255,.06)}.publicRankingBox .rank>b{font-size:34px;color:#f0c86b}.publicRankingBox .rank span{font-size:clamp(20px,2vw,34px)}.publicRankingBox .rank strong{font-size:clamp(26px,2.5vw,42px)}.publicRankingBox .rank em{display:none!important}.publicPodiumBox{max-width:1450px!important}.podiumWrap{padding-top:8px}.podiumCrown{color:#f0c86b;letter-spacing:.25em;font:900 14px Rajdhani,sans-serif}.publicPodiumBox .podium{max-width:1250px;gap:22px}.publicPodiumBox .pod{border-radius:20px!important;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018))!important;border:1px solid rgba(255,255,255,.08)!important}.publicTie{max-height:calc(100vh - 120px);overflow:auto}.publicTie .vs{font-size:clamp(25px,3vw,50px)}
+.publicFullscreenReady .publicFsBtn{display:inline-block!important}.publicFullscreen .publicFsBtn{display:block!important}
+@media(max-width:900px){.publicTopMeta{gap:10px;font-size:11px}.publicFsBtn{padding:7px}.finalRounds,.resultCards{grid-template-columns:1fr}.publicHeader{padding-top:1vh!important}.athlete{font-size:clamp(32px,8vw,58px)!important}.publicStage{min-height:calc(100vh - 150px)}}
+
+/* PUBLIC DISPLAY — CLEAN COMPETITION BOARD */
+html:has(#publicRoot),body:has(#publicRoot){margin:0!important;padding:0!important;overflow:hidden!important;background:#05080d!important}
+#publicRoot{position:fixed;inset:0;overflow:hidden;background:linear-gradient(135deg,#05090f 0%,#0b1621 52%,#05090f 100%);font-family:Rajdhani,Arial,sans-serif;color:#f5f7fa;text-align:center}
+.publicMat{position:absolute;top:0;left:0;right:0;height:92px;display:flex;align-items:center;justify-content:center;background:#020509;border-bottom:2px solid rgba(255,255,255,.12);font:900 clamp(34px,4vw,64px) Rajdhani,sans-serif;letter-spacing:.18em;color:#fff;z-index:10}
+.publicCategory{position:absolute;top:110px;left:0;right:0;display:flex;justify-content:center;align-items:baseline;gap:22px;text-transform:uppercase;z-index:5}
+.publicCategory span{font-size:18px;letter-spacing:.22em;color:#8ea0b0;font-weight:800}.publicCategory strong{font-size:clamp(28px,3vw,48px);letter-spacing:.08em}.publicCategory em{font-style:normal;color:#9eb1c0;font-size:18px}
+.publicIdentity{position:absolute;top:185px;left:5vw;right:5vw;z-index:4}.publicAthleteName{font:900 clamp(42px,6vw,88px) Cinzel,serif;letter-spacing:.03em}.publicAthleteMeta{margin-top:14px;display:flex;justify-content:center;gap:34px;flex-wrap:wrap;color:#c2ccd5;font-size:clamp(18px,1.7vw,28px)}.publicAthleteMeta span{padding:7px 14px;border-left:1px solid rgba(255,255,255,.14)}.publicAthleteMeta b{color:#7f94a5;font-size:.7em;letter-spacing:.16em;margin-right:7px}
+.publicMain{position:absolute;left:4vw;right:4vw;top:355px;bottom:3vh;display:flex;flex-direction:column;align-items:center;justify-content:center}.publicRound{font-weight:900;font-size:22px;letter-spacing:.2em;color:#9bb0bf}.publicPoomsae{font:900 clamp(36px,5vw,74px) Cinzel,serif;margin-top:15px}.publicStatus,.publicCalculating{margin-top:25px;color:#8ea1b0;font-weight:800;letter-spacing:.2em;font-size:16px}.publicTimer{font:900 clamp(100px,17vw,250px) Rajdhani,sans-serif;line-height:.75;margin-top:35px;font-variant-numeric:tabular-nums}
+.publicNotes{width:min(1100px,88vw);margin-top:45px}.notesTitle{font-weight:900;letter-spacing:.25em;color:#8498a8;font-size:16px;margin-bottom:16px}.notesGrid{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:18px}.notesGrid>div{padding:20px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.035)}.notesGrid span,.finalRoundsSimple span,.finalScoreSimple span{display:block;color:#8498a8;letter-spacing:.18em;font-size:14px;font-weight:900}.notesGrid strong{display:block;font-size:clamp(42px,5vw,72px);margin-top:7px}.notesGrid .noteTotal{border-color:rgba(255,255,255,.25)}.notesEmpty{font-size:80px;color:#758492}
+.publicFinalTitle{font-weight:900;letter-spacing:.28em;color:#91a6b5;font-size:18px;margin-bottom:28px}.finalRoundsSimple{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:min(800px,90vw)}.finalRoundsSimple>div{padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.035)}.finalRoundsSimple strong{display:block;font-size:clamp(48px,5vw,76px);margin-top:4px}.finalScoreSimple{margin-top:24px;padding:24px 70px;border:2px solid rgba(255,255,255,.18);border-radius:20px;background:rgba(255,255,255,.045)}.finalScoreSimple strong{display:block;font:900 clamp(90px,12vw,180px) Rajdhani,sans-serif;line-height:.82}.finalScoreSimple small{color:#8295a3;letter-spacing:.1em}
+.publicRankingSimple{top:210px;bottom:2vh;overflow:hidden;justify-content:flex-start}.publicRankingSimple .publicFinalTitle{margin-bottom:18px}.publicRankRow{width:min(1150px,90vw);display:grid;grid-template-columns:90px 1fr 180px;align-items:center;text-align:left;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.09);font-size:clamp(22px,2vw,34px)}.publicRankRow>b{font-size:38px;text-align:center}.publicRankRow span{font-weight:900}.publicRankRow small{display:block;font-size:.55em;color:#8295a3;margin-top:3px}.publicRankRow strong{text-align:right;font-size:clamp(30px,3vw,48px)}
+.publicPodiumSimple{top:260px}.simplePodium{display:flex;align-items:stretch;justify-content:center;gap:20px;width:min(1200px,92vw)}.simplePod{flex:1;min-height:240px;padding:22px 12px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.035);display:flex;flex-direction:column;justify-content:center}.simplePod>b{font-size:54px}.simplePod span{font-size:clamp(22px,2.2vw,36px);font-weight:900;margin-top:8px}.simplePod small{color:#8498a8;margin-top:4px}.simplePod strong{font-size:clamp(34px,3.5vw,58px);margin-top:18px}.publicTieNames{font:900 clamp(35px,5vw,72px) Cinzel,serif}
+@media(max-width:900px){.publicIdentity{top:170px}.publicAthleteMeta{gap:8px}.publicMain{top:330px}.notesGrid,.finalRoundsSimple{grid-template-columns:1fr}.publicRankRow{grid-template-columns:55px 1fr 100px}.publicRankRow>b{font-size:28px}.simplePodium{flex-direction:column}.simplePod{min-height:130px}}
+
+/* No penalties in this scoring system */
+.penalty{display:none!important}
+/* Clean competition TV public display */
+html:has(.public),body:has(.public){background:#05080d!important}
+.publicClean{position:relative;z-index:2;min-height:100vh;width:100vw;box-sizing:border-box;padding:28px 4vw 34px;text-align:center;overflow:hidden;font-family:Rajdhani,sans-serif}
+.cleanMat{position:absolute;left:38px;top:24px;font-size:clamp(28px,3vw,48px);font-weight:1000;letter-spacing:.06em;text-transform:uppercase}
+.cleanCategory{padding-top:10px;font-family:Cinzel,serif;font-size:clamp(28px,3.5vw,58px);font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.cleanAthlete{margin-top:clamp(30px,5vh,58px);font-family:Cinzel,serif;font-size:clamp(40px,6vw,92px);font-weight:900;line-height:1.02}
+.cleanClub{margin-top:10px;font-size:clamp(20px,2.2vw,34px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.72}
+.cleanPoomsaeLabel{margin-top:clamp(28px,4vh,48px);font-size:clamp(14px,1.2vw,20px);font-weight:900;letter-spacing:.3em;opacity:.55}
+.cleanPoomsae{margin-top:7px;font-family:Cinzel,serif;font-size:clamp(30px,4vw,64px);font-weight:900}
+.publicJudgeBlock{width:min(1250px,92vw);margin:28px auto 0}
+.publicJudgeTitle{font-size:clamp(15px,1.4vw,23px);font-weight:900;letter-spacing:.22em;margin-bottom:10px;opacity:.7}
+.publicJudgeTable{border:1px solid rgba(255,255,255,.13);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.025)}
+.publicJudgeRow{display:grid;grid-template-columns:90px 1fr 1fr 1fr;align-items:center;min-height:52px;border-bottom:1px solid rgba(255,255,255,.08);font-size:clamp(19px,2vw,30px)}
+.publicJudgeRow:last-child{border-bottom:0}.judgeNo{font-weight:900}.judgeScore,.judgeTotal{font-variant-numeric:tabular-nums}.judgeTotal{font-weight:900}.isExcluded{text-decoration:line-through;opacity:.35}.isExcluded small{display:block;text-decoration:none;font-size:.38em;letter-spacing:.08em;color:#ff7777;font-weight:900}
+.publicJudgeLegend{display:grid;grid-template-columns:90px 1fr 1fr 1fr;padding:7px 0;font-size:clamp(10px,1vw,15px);font-weight:900;letter-spacing:.16em;opacity:.48}
+.cleanRoundScore{margin:22px auto 0;display:flex;align-items:center;justify-content:center;gap:22px}.cleanRoundScore span,.cleanFinalScore span,.cleanRank span{font-size:clamp(14px,1.4vw,22px);font-weight:900;letter-spacing:.18em;opacity:.6}.cleanRoundScore strong{font-size:clamp(42px,5vw,76px);font-weight:1000}
+.cleanFinalRounds{display:flex;justify-content:center;gap:20px;margin:34px auto 18px}.cleanFinalRounds>div{min-width:220px;padding:16px 28px;border:1px solid rgba(255,255,255,.12);border-radius:12px}.cleanFinalRounds span{display:block;font-size:15px;font-weight:900;letter-spacing:.18em;opacity:.55}.cleanFinalRounds strong{display:block;margin-top:5px;font-size:clamp(36px,4vw,62px)}
+.cleanFinalScore{margin-top:20px}.cleanFinalScore strong{display:block;font-size:clamp(90px,13vw,190px);line-height:.9;font-weight:1000}.cleanRank{margin-top:20px}.cleanRank strong{display:block;font-size:clamp(55px,7vw,100px);font-weight:1000}.cleanWaiting{margin-top:14vh;font-size:clamp(35px,5vw,75px);font-weight:1000;letter-spacing:.12em}.cleanStatus{margin-top:28px;font-size:clamp(17px,1.7vw,27px);font-weight:900;letter-spacing:.2em;opacity:.65}.cleanTimer{font-size:clamp(100px,18vw,260px);font-weight:1000;line-height:.8;margin-top:35px;font-variant-numeric:tabular-nums}
+.cleanRanking{width:min(1250px,92vw);margin:28px auto;text-align:left}.cleanRanking>div{display:grid;grid-template-columns:90px 1fr 180px;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.1);font-size:clamp(20px,2vw,32px)}.cleanRanking b{font-size:1.2em}.cleanRanking span small{display:block;font-size:.55em;opacity:.55}.cleanRanking strong{text-align:right}
+@media(max-width:700px){.cleanMat{left:18px;top:14px}.cleanFinalRounds{gap:8px}.cleanFinalRounds>div{min-width:130px;padding:12px}.publicJudgeRow{grid-template-columns:55px 1fr 1fr 1fr}.publicJudgeLegend{grid-template-columns:55px 1fr 1fr 1fr;font-size:9px}}
+/* Public setup preview + persistent fullscreen control */
+.publicFsBtn{position:fixed;right:22px;top:16px;z-index:100;padding:10px 16px;border:1px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(8,14,20,.9);color:#fff;font:900 14px Rajdhani,sans-serif;letter-spacing:.12em;cursor:pointer}
+.publicFsBtn:hover{background:rgba(255,255,255,.12)}
+.publicFullscreen .publicFsBtn{display:block!important}
+.cleanSetup{position:absolute;left:5vw;right:5vw;top:20vh;bottom:4vh;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+.cleanSetupTitle{font-weight:900;letter-spacing:.25em;font-size:clamp(16px,1.5vw,24px);opacity:.65}
+.cleanSetupCategory{font:900 clamp(42px,5vw,78px) Cinzel,serif;margin:10px 0 12px;text-transform:uppercase}
+.cleanSetupMeta{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;font-weight:900;letter-spacing:.14em;font-size:clamp(15px,1.5vw,24px);opacity:.8}
+.cleanSetupPoomsae{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:min(850px,90vw);margin:22px auto}
+.cleanSetupPoomsae>div{padding:14px 22px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.035)}
+.cleanSetupPoomsae small{display:block;opacity:.5;font-weight:900;letter-spacing:.15em}.cleanSetupPoomsae strong{display:block;font-size:clamp(25px,2.5vw,42px);margin-top:4px}
+.cleanSetupAthletes{width:min(1000px,92vw);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;overflow:hidden}
+.cleanSetupAthletes>div{display:grid;grid-template-columns:45px 1fr auto;align-items:center;text-align:left;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.07);font-size:clamp(18px,1.6vw,28px)}
+.cleanSetupAthletes b{opacity:.5}.cleanSetupAthletes small{opacity:.5;font-size:.65em}.cleanSetupEmpty{grid-column:1/-1;justify-content:center!important;display:block!important;text-align:center!important;opacity:.5!important;letter-spacing:.12em}
+@media(max-width:700px){.cleanSetup{top:18vh}.cleanSetupPoomsae{grid-template-columns:1fr}.cleanSetupAthletes{grid-template-columns:1fr}.publicFsBtn{right:10px;top:10px;padding:8px 11px;font-size:12px}}
+
+/* Public competition welcome + final podium */
+.publicWelcome{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 5vw;box-sizing:border-box;text-align:center;background:radial-gradient(circle at 50% 25%,rgba(20,65,100,.55),transparent 42%),linear-gradient(135deg,#050b12,#0b1724 55%,#03070b);overflow:hidden}
+.publicWelcome:before{content:"";position:absolute;inset:7%;border:1px solid rgba(255,255,255,.08);border-radius:30px;pointer-events:none}
+.welcomeLogo img{width:clamp(150px,15vw,260px);height:auto;max-height:180px;object-fit:contain;filter:drop-shadow(0 12px 30px rgba(0,0,0,.4))}
+.welcomeFederation{margin-top:22px;font-family:Cinzel,serif;font-weight:900;letter-spacing:.12em;font-size:clamp(20px,2.4vw,38px);color:#f4f7fb}
+.welcomeCompetition{margin-top:34px;font-family:Cinzel,serif;font-weight:900;letter-spacing:.08em;font-size:clamp(34px,5vw,78px);color:#f0c86b;text-transform:uppercase}
+.welcomeDate{margin-top:18px;font-size:clamp(18px,2vw,30px);letter-spacing:.18em;color:#aebdcb}
+.welcomeLine{width:min(520px,55vw);height:2px;margin:30px auto;background:linear-gradient(90deg,transparent,#f0c86b,#4bc7ff,transparent)}
+.welcomeWaiting{font-weight:900;letter-spacing:.14em;font-size:clamp(16px,1.7vw,26px);color:#d8e3ec}
+.publicFsBtn{position:fixed;right:18px;top:16px;z-index:1000;border:1px solid rgba(255,255,255,.18);background:rgba(5,12,20,.82);color:#fff;padding:10px 14px;border-radius:9px;font-weight:900;cursor:pointer;backdrop-filter:blur(8px)}
+.cleanPodium{width:min(1250px,92vw);margin:20px auto 0;display:grid;grid-template-columns:repeat(3,1fr);align-items:end;gap:20px}
+.cleanPodiumItem{min-height:280px;padding:24px 18px;box-sizing:border-box;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:flex-end;align-items:center;box-shadow:0 20px 60px rgba(0,0,0,.28)}
+.cleanPodiumItem.pos1{min-height:370px;border-color:rgba(240,200,107,.65);order:2}.cleanPodiumItem.pos2{min-height:315px;order:1}.cleanPodiumItem.pos3{min-height:285px;order:3}
+.cleanPodiumPlace{font-size:clamp(24px,3vw,48px);font-weight:1000}.cleanPodiumMedal{font-size:clamp(42px,5vw,76px);margin:8px 0 12px}.cleanPodiumItem strong{font-family:Cinzel,serif;font-size:clamp(18px,2vw,30px);min-height:45px}.cleanPodiumItem span{color:#aebdcb;margin-top:6px;font-size:clamp(14px,1.4vw,21px)}.cleanPodiumItem b{font-size:clamp(28px,3vw,44px);margin-top:14px;color:#f0c86b}
+@media(max-width:800px){.cleanPodium{grid-template-columns:1fr}.cleanPodiumItem.pos1,.cleanPodiumItem.pos2,.cleanPodiumItem.pos3{order:initial;min-height:220px}.welcomeCompetition{font-size:32px}}
+.publicEliminationNote{margin-top:10px;text-align:center;font-size:clamp(11px,1vw,15px);font-weight:900;letter-spacing:.18em;opacity:.55}
+.publicNoScores{padding:22px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.025);font-size:clamp(18px,2vw,28px);font-weight:900;letter-spacing:.14em;opacity:.55}
+/* FINAL PUBLIC SCOREBOARD - TV layout */
+.publicScoreBoard{padding:20px 3vw 24px!important;background:radial-gradient(circle at 50% 20%,rgba(24,65,95,.30),transparent 45%),linear-gradient(135deg,#05090f,#0b1620 55%,#04070b)}
+.scoreMat{position:absolute;left:30px;top:18px;font-size:clamp(30px,3vw,52px);font-weight:1000;letter-spacing:.08em}
+.scoreCategory{position:absolute;right:30px;top:18px;font-size:clamp(24px,2.6vw,46px);font-weight:1000;letter-spacing:.08em;text-transform:uppercase;text-align:right}
+.scoreIdentity{position:absolute;left:4vw;right:4vw;top:105px;text-align:center}
+.scoreIdentity .cleanAthlete{margin-top:0;font-size:clamp(42px,5.5vw,82px)}
+.scoreIdentity .cleanClub{font-size:clamp(18px,1.8vw,30px);margin-top:8px}
+.scoreCenter{position:absolute;left:4vw;right:4vw;top:300px;bottom:3vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.scoreResults{position:absolute;left:3vw;right:3vw;top:235px;bottom:2vh;overflow:auto;padding-bottom:20px}
+.scorePoomsae{text-align:center;margin-bottom:14px}.scorePoomsae span{display:block;font-size:clamp(13px,1.2vw,19px);font-weight:900;letter-spacing:.22em;opacity:.58}.scorePoomsae strong{display:block;margin-top:5px;font:900 clamp(27px,3vw,48px) Cinzel,serif}
+.scoreAverages{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:14px;width:min(1050px,90vw);margin:16px auto 0}.scoreAverages>div{padding:13px 16px;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(255,255,255,.035)}.scoreAverages span,.scoreFinal span,.scoreFinalRank span{display:block;font-size:clamp(11px,1vw,15px);font-weight:900;letter-spacing:.16em;opacity:.58}.scoreAverages strong{display:block;font-size:clamp(35px,4vw,58px);margin-top:3px}.scoreRound{border-color:rgba(240,200,107,.45)!important}.scoreRound strong,.scoreFinal strong{color:#f0c86b}
+.scoreWaiting{font-size:clamp(30px,4vw,62px);font-weight:1000;letter-spacing:.12em;opacity:.7}.scoreFinal{text-align:center;margin:12px auto 0}.scoreFinal strong{display:block;font-size:clamp(75px,10vw,145px);line-height:.9}.scoreFinalRank{text-align:center;margin-top:8px}.scoreFinalRank strong{display:block;font-size:clamp(40px,5vw,70px)}
+.finalRoundsBoard{width:min(700px,85vw);grid-template-columns:1fr 1fr;margin-top:25px}.finalRoundsBoard strong{font-size:clamp(42px,5vw,68px)}
+.podiumResults{top:205px}.podiumResults .cleanPodium{margin-top:10px;max-width:1250px}.podiumResults .cleanPodiumItem{min-height:205px}.podiumResults .cleanPodiumItem.pos1{min-height:285px}.podiumResults .cleanPodiumItem.pos2{min-height:240px}.podiumResults .cleanPodiumItem.pos3{min-height:220px}
+.publicFullscreenReady .publicFsBtn,.publicFullscreen .publicFsBtn{display:block!important}
+@media(max-width:900px){.scoreMat{left:14px;top:10px}.scoreCategory{right:14px;top:10px}.scoreIdentity{top:85px}.scoreResults{top:205px}.scoreCenter{top:250px}.scoreAverages{grid-template-columns:1fr}.scoreCategory{font-size:22px}}
+
+/* Final public notes layout: judges on the left, averages/rank on the right. */
+.scoreResults{width:min(1500px,94vw)!important;margin:0 auto!important;}
+.scoreResults:has(.publicJudgeBlock){display:grid!important;grid-template-columns:minmax(0,1.55fr) minmax(320px,.75fr)!important;gap:22px!important;align-items:stretch!important;}
+.scoreResults:has(.publicJudgeBlock) .scorePoomsae{grid-column:1/-1!important;}
+.scoreResults:has(.publicJudgeBlock) .publicJudgeBlock{grid-column:1!important;width:100%!important;margin:0!important;}
+.scoreResults:has(.publicJudgeBlock) .scoreAverages{grid-column:2!important;display:flex!important;flex-direction:column!important;justify-content:center!important;gap:12px!important;margin:0!important;}
+.scoreResults:has(.publicJudgeBlock) .scoreAverages>div{padding:16px 18px!important;}
+.scoreResults:has(.publicJudgeBlock) .scoreAverages strong{font-size:clamp(34px,3.6vw,62px)!important;}
+.scoreResults:has(.publicJudgeBlock) .publicJudgeRow{min-height:42px!important;font-size:clamp(16px,1.55vw,25px)!important;}
+.scoreResults:has(.publicJudgeBlock) .publicJudgeLegend{font-size:clamp(9px,.8vw,12px)!important;}
+@media(max-width:950px){
+ .scoreResults:has(.publicJudgeBlock){grid-template-columns:1fr!important;}
+ .scoreResults:has(.publicJudgeBlock) .publicJudgeBlock,.scoreResults:has(.publicJudgeBlock) .scoreAverages{grid-column:1!important;}
+}
+
+/* ===== PUBLIC TV FINAL POLISH ===== */
+html:has(#publicRoot), body:has(#publicRoot){overflow:hidden!important}
+.publicFsBtn{right:24px!important;top:auto!important;bottom:18px!important;left:auto!important;z-index:5000!important;padding:8px 13px!important;font-size:13px!important;opacity:.82}
+.publicFsBtn:hover{opacity:1}
+.scoreCategory{right:34px!important;top:28px!important;max-width:46vw!important;padding-right:125px!important;box-sizing:border-box}
+.publicScoreBoard{overflow:hidden!important}
+.resultOneScreen{position:absolute!important;left:3vw!important;right:3vw!important;top:230px!important;bottom:2vh!important;display:grid!important;grid-template-columns:minmax(285px,24vw) minmax(0,1fr)!important;gap:24px!important;overflow:hidden!important;align-items:stretch!important}
+.resultLeft{min-width:0;display:flex;flex-direction:column;overflow:hidden}
+.resultLeft .scorePoomsae{flex:0 0 auto;margin-bottom:8px!important}
+.resultLeft .publicJudgeBlock{width:100%!important;margin:0!important;flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+.resultLeft .publicJudgeTable{flex:1 1 auto;min-height:0;overflow:hidden!important}
+.resultLeft .publicJudgeTitle{margin-bottom:7px!important;font-size:clamp(12px,1.1vw,18px)!important}
+.publicJudgeTableCompact{border-radius:12px!important}
+.publicJudgeLegend,.publicJudgeRow{grid-template-columns:68px 1fr 1fr 1fr!important}
+.publicJudgeLegend{min-height:28px!important;padding:4px 0!important}
+.publicJudgeRow{min-height:0!important;height:clamp(40px,6vh,58px)!important;font-size:clamp(16px,1.7vw,28px)!important}
+.isExcluded small{font-size:.32em!important}
+.resultSummary{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:18px 20px;border-left:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border-radius:18px;min-width:0}
+.summaryLabel{font-size:clamp(11px,1vw,15px);font-weight:900;letter-spacing:.14em;opacity:.55;margin-top:7px}
+.summaryValue{font-size:clamp(38px,4.5vw,68px);font-weight:1000;line-height:.9}
+.summaryRound{margin-top:14px;padding:16px 10px;border-top:1px solid rgba(240,200,107,.35);border-bottom:1px solid rgba(240,200,107,.25);text-align:center}
+.summaryRound span{display:block;font-size:clamp(11px,1vw,15px);font-weight:900;letter-spacing:.16em;opacity:.6}
+.summaryRound strong{display:block;color:#f0c86b;font-size:clamp(58px,6vw,92px);line-height:.9;margin-top:6px}
+.finalOneScreen{position:absolute!important;left:7vw!important;right:7vw!important;top:300px!important;bottom:7vh!important;display:grid!important;grid-template-columns:1fr 1fr 1.4fr .8fr;gap:18px!important;align-items:center!important;overflow:hidden!important}
+.finalRoundMini,.finalMainScore,.finalRankBig{border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:24px 14px;text-align:center;background:rgba(255,255,255,.035)}
+.finalRoundMini span,.finalMainScore span,.finalRankBig span{display:block;font-size:clamp(12px,1vw,16px);font-weight:900;letter-spacing:.16em;opacity:.55}
+.finalRoundMini strong{display:block;font-size:clamp(42px,5vw,76px);margin-top:8px}
+.finalMainScore{border-color:rgba(240,200,107,.45)}
+.finalMainScore strong{display:block;color:#f0c86b;font-size:clamp(72px,8vw,125px);line-height:.9;margin-top:8px}
+.finalRankBig strong{display:block;color:#f0c86b;font-size:clamp(52px,6vw,90px);line-height:.9;margin-top:8px}
+.podiumResults{top:205px!important;bottom:2vh!important;overflow:hidden!important}
+.cleanPodium{height:calc(100% - 80px)!important;max-height:none!important;align-items:stretch!important;gap:14px!important}
+.cleanPodiumItem{min-height:0!important;height:100%!important;justify-content:flex-end!important;padding:18px 12px!important;border-radius:24px!important}
+.cleanPodiumItem.pos1{height:100%!important}
+.cleanPodiumItem.pos2,.cleanPodiumItem.pos3{height:88%!important;align-self:end}
+.cleanPodiumItem strong{font-size:clamp(17px,1.7vw,28px)!important;line-height:1.05}
+.cleanPodiumItem b{font-size:clamp(26px,2.8vw,44px)!important}
+@media(max-width:1000px){
+ .resultOneScreen{grid-template-columns:minmax(0,1fr) 230px!important;gap:12px!important}
+ .resultSummary{padding:12px}
+ .scoreCategory{padding-right:110px!important;font-size:clamp(18px,2.2vw,32px)!important}
+}
+@media(max-width:760px){
+ .resultOneScreen{grid-template-columns:1fr!important;grid-template-rows:1fr 150px!important;top:220px!important}
+ .resultSummary{display:grid;grid-template-columns:1fr 1fr 1.2fr;align-items:center;border-left:0;border-top:1px solid rgba(255,255,255,.12)}
+ .summaryRound{margin:0;border:0;border-left:1px solid rgba(240,200,107,.25)}
+ .finalOneScreen{left:3vw!important;right:3vw!important;grid-template-columns:1fr 1fr!important;top:270px!important}
+ .publicFsBtn{right:12px!important;bottom:10px!important}
+}
+
+
+/* PUBLIC PODIUM / FULLSCREEN FINAL FIX */
+.cleanPodium{
+  width:min(1450px,94vw)!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  align-items:end!important;
+  gap:16px!important;
+  height:calc(100% - 55px)!important;
+  margin:10px auto 0!important;
+}
+.cleanPodiumItem{
+  order:initial!important;
+  height:auto!important;
+  min-height:250px!important;
+  padding:18px 12px 20px!important;
+  border-radius:22px!important;
+  justify-content:flex-end!important;
+  overflow:hidden!important;
+  position:relative!important;
+}
+.cleanPodiumItem.pos1{min-height:360px!important;order:2!important}
+.cleanPodiumItem.pos2{min-height:315px!important;order:1!important}
+.cleanPodiumItem.pos3{min-height:285px!important;order:3!important}
+.cleanPodiumItem.pos4{min-height:255px!important;order:4!important}
+.cleanPodiumItem.pos1:before,.cleanPodiumItem.pos2:before,.cleanPodiumItem.pos3:before,.cleanPodiumItem.pos4:before{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:7px;background:rgba(240,200,107,.7);
+}
+.cleanPodiumItem.pos1{background:radial-gradient(circle at 50% 15%,rgba(240,200,107,.18),transparent 45%),linear-gradient(180deg,rgba(240,200,107,.13),rgba(255,255,255,.025))!important;border-color:rgba(240,200,107,.55)!important}
+.cleanPodiumItem.pos2{background:radial-gradient(circle at 50% 15%,rgba(190,205,220,.14),transparent 45%),linear-gradient(180deg,rgba(190,205,220,.10),rgba(255,255,255,.025))!important}
+.cleanPodiumItem.pos3{background:radial-gradient(circle at 50% 15%,rgba(190,120,70,.12),transparent 45%),linear-gradient(180deg,rgba(190,120,70,.08),rgba(255,255,255,.025))!important}
+.cleanPodiumItem.pos4{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02))!important}
+.cleanPodiumMedal{filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));font-size:clamp(34px,4vw,68px)!important}
+.cleanPodiumItem strong{white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.cleanPodiumItem span{white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.podiumResults{overflow:hidden!important}
+@media(max-width:900px){.cleanPodium{gap:8px!important}.cleanPodiumItem{min-height:190px!important}.cleanPodiumItem.pos1{min-height:240px!important}.cleanPodiumItem.pos2{min-height:220px!important}.cleanPodiumItem.pos3{min-height:205px!important}.cleanPodiumItem.pos4{min-height:190px!important}}
+
+
+/* Round results visible in the Operator Console */
+.roundHistory{margin-top:16px;background:linear-gradient(145deg,#0b1c2b,#08131f)}
+.roundHistoryItem{display:grid;grid-template-columns:1fr auto;gap:3px 14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.roundHistoryItem:last-child{border-bottom:0}
+.roundHistoryItem span{font-weight:900;color:var(--cyan);letter-spacing:.04em}
+.roundHistoryItem strong{grid-column:2;grid-row:1 / span 2;font-size:28px;align-self:center;color:var(--text)}
+.roundHistoryItem small{color:var(--muted)}
+#semiPoomsaeSetup{transition:opacity .2s ease}
+@media(max-width:700px){.roundHistoryItem{grid-template-columns:1fr auto}.roundHistoryItem strong{font-size:22px}}
+
+/* FINAL FIXES: LEFT CTRL fullscreen, locked semi-final transition, operator timer, public podium mirror */
+.btn:disabled{opacity:.45!important;cursor:not-allowed!important;filter:grayscale(.35)}
+.publicPodiumMirror{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:left}
+.publicPodiumMirror .card{width:min(1800px,96vw);margin:0}
+.publicPodiumMirror .podiumCard h1{font-size:38px}
+.publicPodiumMirror .podium{grid-template-columns:repeat(4,1fr)!important;max-width:none!important;gap:15px!important;margin-top:30px!important}
+.publicPodiumMirror .pod{min-height:290px!important;padding:24px 10px!important;border-radius:15px!important;background:#071624!important;backdrop-filter:none!important}
+.publicPodiumMirror .pod.pos1{min-height:370px!important}
+.publicPodiumMirror .pod.pos2{min-height:315px!important}
+.publicPodiumMirror .pod.pos3{min-height:280px!important}
+.publicPodiumMirror .pod h2{font-size:clamp(20px,2.3vw,34px)!important;min-height:60px;margin:18px 0 5px!important}
+.publicPodiumMirror .pod strong{font-size:28px!important}
+.publicPodiumMirror .pod b{font-size:65px!important}
+.publicPodiumMirror .medalIcon{font-size:40px!important}
+@media(max-width:1050px){.publicPodiumMirror .podium{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:700px){.publicPodiumMirror .podium{grid-template-columns:1fr!important}}
+.podiumCrown .podiumMeta{display:block;margin-top:8px;font-size:.72em;letter-spacing:.08em;opacity:.82;font-weight:600}
+
+/* Competition ready overview shown after setup and before the operator starts the competition */
+.setupOverview{max-width:1500px;margin:auto;padding:35px 20px}.overviewCard{text-align:center;padding:35px}.overviewCard h1{font-size:clamp(32px,4vw,58px);margin:8px 0 25px}.overviewMeta,.readyMeta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}.overviewMeta span,.readyMeta span{background:#081827;border:1px solid var(--line);border-radius:10px;padding:13px}.overviewMeta b,.readyMeta b{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}.overviewPoomsae,.readyPoomsae{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin:25px 0}.overviewPoomsae>div,.readyPoomsae>div{display:flex;flex-direction:column;gap:7px;padding:18px;border:1px solid var(--line);border-radius:12px;background:#071624}.overviewPoomsae b,.readyPoomsae b{color:var(--cyan);font-size:20px}.overviewAthletes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:left;margin:25px 0}.overviewAthletes h2{grid-column:1/-1}.setupOverviewAth{display:grid;grid-template-columns:35px 1fr;gap:5px;padding:9px;border-bottom:1px solid var(--line)}.setupOverviewAth b{color:var(--cyan)}.setupOverviewAth small{grid-column:2;color:var(--muted)}.launchCompetitionBtn{font-size:20px;padding:18px 30px}.publicCompetitionReady{min-height:100vh;padding:40px 5vw;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 50% 15%,#123b60,#040a11 68%);font-family:Rajdhani,sans-serif}.readyBrand img{width:85px;max-height:85px;object-fit:contain}.readyBrand div{font-weight:900;letter-spacing:.08em;font-size:clamp(15px,1.5vw,24px)}.readyTitle{font-family:Cinzel,serif;font-size:clamp(30px,5vw,72px);font-weight:900;margin-top:18px}.readyPhase{font-size:clamp(22px,3vw,42px);color:var(--cyan);font-weight:1000;margin-top:10px}.readyMeta{width:min(1200px,95vw)}.readyPoomsae{width:min(1200px,95vw)}.readyPoomsae span{font-size:clamp(18px,2vw,30px)}.readyAthletes{width:min(1200px,95vw);display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0}.readyAthletes span{padding:8px;border-bottom:1px solid var(--line);color:var(--muted)}.readyWaiting{margin-top:20px;color:var(--gold);font-size:clamp(20px,2.5vw,34px);font-weight:1000;letter-spacing:.08em}@media(max-width:900px){.overviewMeta,.readyMeta{grid-template-columns:repeat(2,1fr)}.overviewAthletes,.readyAthletes{grid-template-columns:repeat(2,1fr)}.overviewPoomsae,.readyPoomsae{grid-template-columns:1fr}}@media(max-width:600px){.overviewMeta,.readyMeta,.overviewAthletes,.readyAthletes{grid-template-columns:1fr}}
+
+/* V5 — Editorial public competition-ready screen: no cards, larger key information. */
+.publicCompetitionReady.readyEditorial{position:relative;min-height:100vh;width:100vw;box-sizing:border-box;padding:3vh 5vw 3vh;overflow:hidden;text-align:left;background:radial-gradient(circle at 18% 24%,rgba(35,91,137,.30),transparent 34%),radial-gradient(circle at 88% 78%,rgba(53,35,94,.25),transparent 36%),linear-gradient(135deg,#050b12,#0a1522 58%,#04070b);font-family:Rajdhani,sans-serif}
+.readyEditorial .readyHeader{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:2}
+.readyEditorial .readyBrand{display:flex;align-items:center;justify-content:center;gap:12px;font-size:clamp(13px,1.15vw,19px);font-weight:900;letter-spacing:.12em;opacity:.9;text-transform:uppercase}
+.readyEditorial .readyBrand img{width:clamp(75px,6vw,115px);max-height:72px;object-fit:contain}
+.readyEditorial .readyTitle{margin-top:1.5vh;font:900 clamp(34px,4.7vw,76px) Cinzel,serif;letter-spacing:.07em;text-transform:uppercase;color:#f4f7fb}
+.readyEditorial .readyPhase{margin-top:.5vh;font-size:clamp(22px,2.2vw,38px);font-weight:1000;letter-spacing:.22em;color:#f0c86b}
+.readyEditorial .readyLayout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);gap:5vw;max-width:1500px;margin:5vh auto 0;align-items:start}
+.readyEditorial .readyMain{min-width:0}
+.readyEditorial .readyHeadline{display:flex;align-items:flex-end;gap:4vw;padding-bottom:2.2vh;border-bottom:1px solid rgba(255,255,255,.18)}
+.readyEditorial .readyHeadline>div{display:flex;flex-direction:column}
+.readyEditorial .readyHeadline span,.readyEditorial .readySecondary span,.readyEditorial .readyPoomsaePhase,.readyEditorial .readyAthleteHeading span{font-size:clamp(12px,1vw,17px);font-weight:1000;letter-spacing:.2em;opacity:.58}
+.readyEditorial .readyClass strong{font-size:clamp(60px,7vw,112px);line-height:.85;font-weight:1000}
+.readyEditorial .readyCategory strong{font-size:clamp(46px,5.3vw,88px);line-height:.9;font-weight:1000;text-transform:uppercase}
+.readyEditorial .readySecondary{display:flex;flex-wrap:wrap;gap:2.4vh 3.5vw;padding:2.3vh 0 1vh}
+.readyEditorial .readySecondary>div{min-width:95px;display:flex;flex-direction:column;gap:2px}
+.readyEditorial .readySecondary strong{font-size:clamp(22px,2vw,34px);font-weight:1000;text-transform:uppercase}
+.readyEditorial .readyPoomsaeEditorial{display:flex;gap:4vw;margin-top:3.3vh;padding-top:2.5vh;border-top:1px solid rgba(255,255,255,.1)}
+.readyEditorial .readyPoomsaeGroup{min-width:0;flex:1}
+.readyEditorial .readyPoomsaeGroup.final{opacity:.8}
+.readyEditorial .readyPoomsaePhase{color:#f0c86b;margin-bottom:1vh;opacity:1}
+.readyEditorial .readyPoomsaeRow{display:flex;align-items:baseline;gap:18px;margin:1.2vh 0}
+.readyEditorial .readyPoomsaeRow span{font-size:clamp(12px,1vw,16px);font-weight:1000;letter-spacing:.16em;opacity:.55;min-width:82px}
+.readyEditorial .readyPoomsaeRow strong{font:900 clamp(28px,3vw,52px) Cinzel,serif;text-transform:uppercase;line-height:1.05}
+.readyEditorial .readyAthleteColumn{border-left:1px solid rgba(255,255,255,.16);padding-left:3vw;min-height:300px}
+.readyEditorial .readyAthleteHeading{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:1.2vh;margin-bottom:1vh}
+.readyEditorial .readyAthleteHeading strong{font-size:clamp(28px,2.5vw,44px);font-weight:1000}
+.readyEditorial .readyAthletes{display:flex;flex-direction:column;gap:0;max-height:46vh;overflow:hidden}
+.readyEditorial .readyAthletes>span{display:block;padding:1.15vh 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:clamp(21px,1.75vw,31px);font-weight:900;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.readyEditorial .readyAthletes>span::first-letter{opacity:1}
+.readyEditorial .readyWaiting{position:absolute;left:5vw;right:5vw;bottom:2.2vh;text-align:center;font-size:clamp(12px,1.1vw,18px);font-weight:1000;letter-spacing:.24em;opacity:.48}
+@media(max-width:900px){.publicCompetitionReady.readyEditorial{overflow:auto;padding-bottom:7vh}.readyEditorial .readyLayout{grid-template-columns:1fr;gap:4vh;margin-top:3vh}.readyEditorial .readyAthleteColumn{border-left:0;border-top:1px solid rgba(255,255,255,.14);padding:2vh 0 0}.readyEditorial .readyAthletes{max-height:28vh}.readyEditorial .readyPoomsaeEditorial{flex-direction:column;gap:2vh}.readyEditorial .readyWaiting{position:static;margin-top:3vh}.readyEditorial .readyHeadline{gap:7vw}}
+
+/* V6 — public athlete list for up to 30 athletes, readable without truncation */
+.readyEditorial .readyAthletes{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:2.5vw!important;
+  row-gap:0!important;
+  max-height:64vh!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  padding-right:8px!important;
+}
+.readyEditorial .readyAthletes>span{
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  min-width:0!important;
+  padding: .62vh 0!important;
+  font-size:clamp(18px,1.55vw,28px)!important;
+  line-height:1.08!important;
+  overflow-wrap:anywhere!important;
+}
+.readyEditorial .readyAthletes>span b{opacity:.5;margin-right:.35em}
+
+/* V6 — final score and rank are the visual center of the public final result */
+.finalOneScreen{
+  grid-template-columns:minmax(150px,.55fr) minmax(420px,1.8fr) minmax(150px,.55fr)!important;
+  align-items:center!important;
+  gap:3vw!important;
+}
+.finalHero{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:clamp(24px,4vw,70px)!important;
+  min-width:0!important;
+}
+.finalHero .finalMainScore,.finalHero .finalRankBig{
+  border:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+  padding:0!important;
+}
+.finalHero .finalMainScore{
+  min-width:260px!important;
+  border-right:1px solid rgba(240,200,107,.25)!important;
+  padding-right:clamp(20px,3vw,55px)!important;
+}
+.finalHero .finalMainScore strong{font-size:clamp(90px,10vw,180px)!important;line-height:.82!important;text-shadow:0 8px 30px rgba(240,200,107,.16)}
+.finalHero .finalRankBig strong{font-size:clamp(76px,8vw,145px)!important;line-height:.82!important}
+.finalHero .finalMainScore span,.finalHero .finalRankBig span{font-size:clamp(12px,1.05vw,18px)!important;letter-spacing:.22em!important}
+.finalRoundMini{border:0!important;background:transparent!important;padding:10px!important}
+.finalRoundMini strong{font-size:clamp(34px,4vw,62px)!important}
+
+/* V6 — setup athlete errors are shown inline, never with a popup */
+.invalid-athlete{border-color:var(--red)!important;color:var(--red)!important;background:rgba(255,60,80,.10)!important;box-shadow:0 0 0 2px rgba(255,60,80,.12)!important}
+.setupActions .goldBtn:disabled{opacity:.45!important;cursor:not-allowed!important;filter:grayscale(.3)}
+
+/* V6 — valid judge scores become green, invalid remain red */
+.judgeBox input[type="number"].valid-score{border-color:var(--green)!important;color:var(--green)!important;background:rgba(40,210,145,.08)!important;box-shadow:0 0 0 2px rgba(40,210,145,.10)!important}
+@media(max-width:900px){
+ .readyEditorial .readyAthletes{grid-template-columns:1fr!important;max-height:44vh!important}
+ .finalOneScreen{grid-template-columns:1fr 1fr!important;grid-template-rows:auto 1fr!important}
+ .finalHero{grid-column:1/-1;grid-row:1;order:-1}
+ .finalRoundMini{grid-row:2}
+ .finalHero .finalMainScore{min-width:0!important}
+}
+@media(max-width:650px){.finalHero{gap:16px!important}.finalHero .finalMainScore{padding-right:14px!important}.finalHero .finalMainScore strong{font-size:clamp(65px,18vw,105px)!important}.finalHero .finalRankBig strong{font-size:clamp(58px,15vw,90px)!important}}
+/* V7 — manual tie decisions and post-setup athlete management */
+.postSetupAthleteTools{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center;margin:12px 0 20px;padding:12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.postSetupAthleteTools.compact{grid-template-columns:1fr 1fr auto;margin:12px 0 0;padding:10px 0 0;border-bottom:0}
+.postSetupAthleteTools input{margin-top:0}
+.smallBtn{padding:6px 9px!important;font-size:12px!important}
+.setupOverviewAth{position:relative}
+.manualTiePanel{margin:18px 0;padding:18px;border:1px solid rgba(240,200,107,.45);border-radius:12px;background:rgba(240,200,107,.055)}
+.manualTiePair{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.manualTiePair:last-child{border-bottom:0}
+.manualTieAth{display:flex;flex-direction:column;gap:3px;padding:10px;border:1px solid var(--line);border-radius:9px;background:#071624;text-align:center}
+.manualTieAth b{font-size:20px}.manualTieAth small{color:var(--muted)}.manualTieVs{font-weight:1000;color:var(--gold);font-size:20px}.manualTieActions{grid-column:1/-1;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+@media(max-width:700px){.postSetupAthleteTools,.postSetupAthleteTools.compact{grid-template-columns:1fr}.manualTiePair{grid-template-columns:1fr}.manualTieVs{display:none}.manualTieActions{grid-column:1}}
+
+/* V8 — operator results / audit / exports */
+.resultsCard{min-height:calc(100vh - 110px);padding:22px}.resultsHead{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:20px}.resultsHead h1{font-size:42px;margin-bottom:5px}.resultsActions{display:flex;gap:8px;flex-wrap:wrap}.resultsTableWrap{overflow:auto;border:1px solid var(--line);border-radius:12px}.resultsTable{width:100%;border-collapse:collapse;min-width:850px}.resultsTable th,.resultsTable td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:center}.resultsTable th{font-size:12px;color:var(--muted);letter-spacing:.12em}.resultsTable td:nth-child(2),.resultsTable td:nth-child(3){text-align:left}.resultsTable tr:last-child td{border-bottom:0}.competitionLog{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}.logRow{display:grid;grid-template-columns:90px 170px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}.logRow time{color:var(--muted)}.logRow b{color:var(--cyan)}
+@media(max-width:800px){.resultsHead{flex-direction:column}.resultsHead h1{font-size:32px}.logRow{grid-template-columns:70px 1fr}.logRow span{grid-column:1/-1}}
+/* V8 — operator workflow polish */
+.athleteRowActions{display:flex;gap:5px;align-items:center}.athleteRowActions .btn:disabled{opacity:.35;cursor:not-allowed}.athleteProgress{font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:900}.athleteRow span b{font-size:16px}.resultsActions .btn{white-space:nowrap}
+/* V9 — Duo / Team entry setup */
+.setupAthleteItem.groupEntry{grid-template-columns:34px 1fr;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.groupEntry .groupMembers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.groupEntry .memberCell{display:grid;grid-template-columns:1fr 105px;gap:6px;min-width:0}
+.groupEntry .memberCell input,.groupEntry .memberCell select,.groupEntry .athClub{margin-top:0;min-height:50px}
+.groupEntry .athClub{grid-column:2;width:100%;margin-top:8px}
+.groupHint{grid-column:2;color:var(--muted);font-size:12px;margin-top:5px}
+.groupPostSetup .groupPostMembers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;grid-column:1/-1}
+.groupPostSetup .memberCell{display:grid;grid-template-columns:1fr 100px;gap:6px}
+.groupPostSetup .memberCell input,.groupPostSetup .memberCell select{margin-top:0}
+@media(max-width:800px){.groupEntry .groupMembers,.groupPostSetup .groupPostMembers{grid-template-columns:1fr}.groupEntry .memberCell,.groupPostSetup .memberCell{grid-template-columns:1fr}.groupEntry .athClub,.groupHint{grid-column:2}}
+
+/* V10 — FTT branding, compact signature, fully visible pre-competition roster and refined final result */
+.appSignature{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;margin-left:8px;
+  font-family:"Cinzel",serif;font-style:italic;font-weight:900;font-size:16px;
+  letter-spacing:-.08em;color:var(--gold);
+  border:1px solid rgba(240,200,107,.32);border-radius:50%;
+  box-shadow:0 0 16px rgba(240,200,107,.08),inset 0 0 10px rgba(255,255,255,.03);
+  transform:rotate(-8deg);text-shadow:0 1px 8px rgba(240,200,107,.25);
+  user-select:none;white-space:nowrap;
+}
+.publicSignature{position:fixed;left:28px;right:auto;bottom:20px;width:42px;height:42px;font-size:18px;z-index:100;opacity:.9}
+.readyEditorial .publicSignature{left:2.5vw;right:auto;bottom:2vh;position:fixed}
+
+/* The pre-start roster must fit all configured entries on one public page (up to 30). */
+.readyEditorial .readyAthletes{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  max-height:none!important;
+  overflow:visible!important;
+  align-content:start!important;
+}
+.readyEditorial .readyAthletes>span{
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  min-width:0!important;
+  font-size:clamp(16px,1.35vw,24px)!important;
+  line-height:1.12!important;
+  padding:.55vh 0!important;
+}
+
+/* Final result: score + rank dominate the screen, round scores sit beneath. */
+.finalOneScreen{
+  position:absolute!important;left:6vw!important;right:6vw!important;top:235px!important;bottom:7vh!important;
+  display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;
+  gap:clamp(18px,3vh,34px)!important;
+}
+.finalOneScreen .finalHero{
+  order:1!important;display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:clamp(38px,6vw,100px)!important;width:100%;
+}
+.finalOneScreen .finalHero .finalMainScore,
+.finalOneScreen .finalHero .finalRankBig{
+  min-width:0!important;border:0!important;background:transparent!important;border-radius:0!important;padding:0!important;
+  text-align:center!important;
+}
+.finalOneScreen .finalHero .finalMainScore{border-right:1px solid rgba(240,200,107,.30)!important;padding-right:clamp(35px,5vw,90px)!important}
+.finalOneScreen .finalHero .finalMainScore strong{font-size:clamp(105px,12vw,210px)!important;line-height:.82!important}
+.finalOneScreen .finalHero .finalRankBig strong{font-size:clamp(95px,10vw,175px)!important;line-height:.82!important}
+.finalOneScreen .finalHero .finalMainScore span,.finalOneScreen .finalHero .finalRankBig span{display:block;font-size:clamp(13px,1.2vw,20px)!important;letter-spacing:.25em!important;margin-bottom:10px!important}
+.finalOneScreen .finalRoundMini{
+  order:2!important;display:flex!important;justify-content:center!important;align-items:center!important;gap:clamp(35px,6vw,90px)!important;
+  width:min(850px,90vw)!important;border-top:1px solid rgba(255,255,255,.12)!important;padding:18px 0 0!important;background:transparent!important;
+}
+.finalOneScreen .finalRoundMini span{font-size:clamp(12px,1vw,17px)!important;letter-spacing:.2em!important;opacity:.55!important}
+.finalOneScreen .finalRoundMini strong{font-size:clamp(30px,3.6vw,58px)!important}
+
+@media(max-width:1100px){
+  .readyEditorial .readyAthletes{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .finalOneScreen{top:220px!important}
+}
+@media(max-width:700px){
+  .readyEditorial .readyAthletes{grid-template-columns:1fr!important}
+  .finalOneScreen{left:4vw!important;right:4vw!important;top:190px!important;gap:20px!important}
+  .finalOneScreen .finalHero{gap:22px!important}
+  .finalOneScreen .finalHero .finalMainScore{padding-right:22px!important}
+  .finalOneScreen .finalHero .finalMainScore strong{font-size:clamp(70px,20vw,110px)!important}
+  .finalOneScreen .finalHero .finalRankBig strong{font-size:clamp(64px,18vw,100px)!important}
+  .finalOneScreen .finalRoundMini{gap:20px!important;flex-wrap:wrap}
+  .publicSignature{right:12px;bottom:12px}
+}
+
+/* V11 — refined public podium hierarchy */
+.podiumHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;margin-bottom:10px}
+.podiumMetaLarge{display:flex;flex-direction:column;align-items:flex-end;gap:4px;text-align:right;font-family:"Rajdhani",sans-serif;font-size:clamp(18px,2vw,30px);font-weight:800;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.podiumMetaLarge span{white-space:nowrap}.podiumMetaLarge b{color:var(--text);font-size:1.15em;margin-left:7px}
+.publicPodiumMirror .podiumHeader{align-items:flex-start}
+.publicPodiumMirror .podiumCrown{margin-bottom:0;text-align:left}
+.podium{grid-template-columns:1fr 1.18fr 1fr 1fr!important;align-items:end}
+.podium .pos1{min-height:430px!important;transform:translateY(-8px);z-index:2}
+.podium .pos2{min-height:350px!important}
+.podium .pos3{min-height:300px!important}
+.podium .pos1 b{font-size:78px}.podium .pos2 b{font-size:68px}.podium .pos3 b{font-size:58px}
+.podium .pos1 h2{font-size:clamp(24px,2.5vw,36px)}
+.podium .pos2 h2{font-size:clamp(21px,2.25vw,32px)}
+@media(max-width:900px){.podiumHeader{flex-direction:column}.podiumMetaLarge{align-items:flex-start;text-align:left}.publicPodiumMirror .podium{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:700px){.publicPodiumMirror .podium{grid-template-columns:1fr!important}.publicSignature{left:16px;bottom:14px}}
+
+
+/* V12 — public pre-competition roster: never clip configured athletes */
+.publicCompetitionReady.readyEditorial{
+  overflow:auto!important;
+  overflow-x:hidden!important;
+  justify-content:flex-start!important;
+}
+.readyEditorial .readyLayout{width:min(1700px,94vw)!important;max-width:1700px!important;}
+.readyEditorial .readyAthleteColumn{min-width:0!important;overflow:visible!important;}
+.readyEditorial .readyAthletes{
+  max-height:none!important;
+  height:auto!important;
+  overflow:visible!important;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:2vw!important;
+  row-gap:0!important;
+  align-content:start!important;
+}
+.readyEditorial .readyAthletes>span{
+  display:block!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  font-size:clamp(15px,1.15vw,22px)!important;
+  line-height:1.02!important;
+  padding:.42vh 0!important;
+  min-width:0!important;
+}
+.readyEditorial .readyAthletes>span b{display:inline-block;min-width:2.2em;opacity:.55!important}
+/* More compact rosters: 20–30 entries remain readable and fit in the public layout. */
+.readyEditorial .readyAthleteColumn.roster18 .readyAthletes>span{font-size:clamp(14px,1.05vw,20px)!important;padding:.32vh 0!important}
+.readyEditorial .readyAthleteColumn.roster24 .readyAthletes>span{font-size:clamp(13px,.95vw,18px)!important;padding:.25vh 0!important}
+.readyEditorial .readyAthleteColumn.roster30 .readyAthletes>span{font-size:clamp(12px,.86vw,17px)!important;padding:.18vh 0!important}
+@media(max-width:1100px){
+  .readyEditorial .readyLayout{grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr)!important;gap:3vw!important}
+}
+@media(max-width:900px){
+  .publicCompetitionReady.readyEditorial{overflow:auto!important}
+  .readyEditorial .readyLayout{grid-template-columns:1fr!important;width:min(94vw,760px)!important}
+  .readyEditorial .readyAthletes{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .readyEditorial .readyAthletes>span{font-size:clamp(14px,2.3vw,20px)!important;padding:.5vh 0!important}
+}
+@media(max-width:600px){
+  .readyEditorial .readyAthletes{grid-template-columns:1fr!important}
+  .readyEditorial .readyAthletes>span{font-size:clamp(15px,4vw,19px)!important}
+}
+
+
+/* V13 — round penalty controls and full current ranking */
+.roundHistoryItem{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.roundHistoryItem:last-child{border-bottom:0}
+.roundHistoryMain{min-width:0;flex:1}.roundHistoryMain span{display:block;font-weight:900;color:var(--text)}.roundHistoryMain strong{display:inline-block;font-size:22px;margin-top:3px}.roundHistoryMain small{display:block;color:var(--muted);margin-top:3px}
+.penaltyControl{display:flex;align-items:center;gap:8px;flex:0 0 auto}.penaltyControl span{font-size:11px;color:var(--muted);font-weight:900;letter-spacing:.08em}.penaltyControl b{min-width:28px;text-align:center;font-size:20px;color:var(--gold)}.penaltyBtn{min-width:34px!important;width:34px;height:34px;padding:4px!important;border-radius:50%!important;font-size:22px!important;line-height:1}.penaltyBtn:disabled{opacity:.35;cursor:not-allowed}.publicPenalty{display:block;margin-top:6px;color:var(--red);font-size:.42em;font-weight:900;letter-spacing:.05em}
+.publicRankingBox .ranking{max-height:none!important;overflow:visible!important}
+@media(max-width:700px){.roundHistoryItem{align-items:flex-start;flex-direction:column}.penaltyControl{align-self:flex-end}}
+
+/* V14 — operator backup/recovery, public progress, validation badge and subtle broadcast animations */
+.publicProgress{position:absolute;right:3vw;top:4.2vh;font-size:clamp(18px,1.7vw,30px);font-weight:1000;letter-spacing:.08em;color:var(--gold);z-index:5}
+.roundValidatedBadge{display:inline-flex;align-items:center;gap:7px;margin:10px 0;padding:7px 12px;border:1px solid rgba(80,220,150,.45);border-radius:999px;color:#79e7aa;background:rgba(40,170,100,.08);font-size:12px;font-weight:1000;letter-spacing:.08em}
+.publicClean .scoreIdentity,.publicClean .scoreCenter,.publicClean .scoreResults,.publicClean .finalHero,.publicClean .finalRoundMini{animation:publicFadeUp .45s ease both}
+.publicClean .scoreCenter{animation-delay:.06s}.publicClean .finalHero{animation-delay:.08s}.publicClean .finalRoundMini{animation-delay:.12s}
+@keyframes publicFadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.publicClean .finalMainScore strong{animation:scoreReveal .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes scoreReveal{from{opacity:0;transform:scale(.82);filter:blur(5px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
+.publicClean .cleanPoomsae{animation:poomsaeReveal .5s ease both}
+@keyframes poomsaeReveal{from{opacity:0;letter-spacing:.08em}to{opacity:1;letter-spacing:normal}}
+@media(max-width:700px){.publicProgress{right:16px;top:14px;font-size:16px}}
+
+.roundValidMark{color:#79e7aa;font-weight:1000;letter-spacing:.04em}
+
+
+/* V15 — qualified finalists, operator navigation and animated validation */
+.qualifiedGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:20px 0 24px}.qualifiedRow{display:grid;grid-template-columns:58px 1fr auto;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}.qualifiedRow>b{font-size:24px;color:var(--gold)}.qualifiedRow span{font-weight:900;font-size:18px}.qualifiedRow small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.qualifiedRow strong{font-size:22px}.navAthleteBtn{min-width:130px}
+.validationOverlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:99999;pointer-events:none;background:rgba(0,0,0,.06);animation:validationIn .28s ease both}.validationOverlay.hide{animation:validationOut .42s ease both}.validationGlass{min-width:280px;padding:34px 60px;text-align:center;border:1px solid rgba(255,255,255,.42);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.06));backdrop-filter:blur(18px) saturate(140%);box-shadow:0 24px 80px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.35)}.validationCheck{width:66px;height:66px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;background:rgba(50,220,145,.18);border:2px solid rgba(100,240,180,.7);color:#8ff0bb;font-size:40px;font-weight:1000;animation:validationPop .45s cubic-bezier(.2,.9,.2,1) both}.validationText{font-size:clamp(32px,4vw,58px);font-weight:1000;letter-spacing:.1em;color:#dfffee;text-shadow:0 4px 24px rgba(0,0,0,.35)}@keyframes validationIn{from{opacity:0}to{opacity:1}}@keyframes validationOut{from{opacity:1}to{opacity:0}}@keyframes validationPop{from{opacity:0;transform:scale(.55) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@media(max-width:800px){.qualifiedGrid{grid-template-columns:1fr}.validationGlass{min-width:0;width:min(80vw,360px);padding:28px 24px}}
+
+/* V16 — public setup roster: keep every configured participant visible and readable. */
+.readyEditorial .readyAthleteColumn{min-height:0!important;display:flex!important;flex-direction:column!important;}
+.readyEditorial .readyAthletes{
+  flex:1 1 auto!important;
+  min-height:0!important;
+  max-height:58vh!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  scrollbar-width:thin;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  align-content:start!important;
+}
+.readyEditorial .readyAthletes>span{
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  word-break:normal!important;
+  overflow-wrap:anywhere!important;
+  line-height:1.15!important;
+}
+@media(min-width:1200px){
+  .readyEditorial .readyAthleteColumn.roster24 .readyAthletes,
+  .readyEditorial .readyAthleteColumn.roster30 .readyAthletes{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}
+@media(max-width:900px){.readyEditorial .readyAthletes{max-height:48vh!important;}}
+
+
+/* V17 — public roster reliability + elegant qualification screen */
+.readyEditorial .readyAthletes{
+  max-height:none!important;
+  height:auto!important;
+  overflow:visible!important;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-auto-flow:row!important;
+  align-content:start!important;
+}
+.readyEditorial .readyAthletes>span{
+  min-width:0!important;
+  display:block!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  padding:.55vh .25vw!important;
+  line-height:1.2!important;
+}
+@media(min-width:1200px){
+  .readyEditorial .readyAthleteColumn.roster18 .readyAthletes,
+  .readyEditorial .readyAthleteColumn.roster24 .readyAthletes,
+  .readyEditorial .readyAthleteColumn.roster30 .readyAthletes{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}
+@media(max-width:900px){.readyEditorial .readyAthletes{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
+@media(max-width:600px){.readyEditorial .readyAthletes{grid-template-columns:1fr!important;}}
+
+.publicQualified.qualifiedElegant{
+  min-height:100vh;position:relative;overflow:hidden;padding:6vh 6vw 4vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  background:radial-gradient(circle at 50% 10%,rgba(26,78,120,.75),transparent 38%),linear-gradient(145deg,#030911,#071a2a 55%,#02070d);
+}
+.qualifiedElegant .qualifiedGlow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 55%,rgba(85,210,255,.08),transparent 42%)}
+.qualifiedElegant .qualifiedHero{position:relative;z-index:1;margin-bottom:2.5vh}
+.qualifiedElegant .qualifiedKicker{font-size:clamp(13px,1.2vw,20px);letter-spacing:.28em;font-weight:1000;color:var(--cyan);opacity:.85}
+.qualifiedElegant .qualifiedHero h1{margin:.35em 0 .15em;font-size:clamp(38px,4.6vw,72px);font-weight:1000;letter-spacing:.03em}
+.qualifiedElegant .qualifiedDescriptor{font-size:clamp(16px,1.45vw,25px);font-weight:900;letter-spacing:.08em;opacity:.8}
+.qualifiedElegant .qualifiedHero p{margin:.9em 0 0;font-size:clamp(12px,1vw,17px);letter-spacing:.35em;font-weight:1000;opacity:.55}
+.qualifiedElegant .publicQualifiedList{position:relative;z-index:1;width:min(1250px,92vw);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin:1vh auto 2vh}
+.qualifiedElegant .publicQualifiedRow{display:grid;grid-template-columns:58px 1fr auto;align-items:center;gap:14px;padding:13px 18px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.025);backdrop-filter:blur(8px);border-radius:14px;animation:publicFadeUp .45s ease both}
+.qualifiedElegant .qualifiedRank{font-size:clamp(24px,2vw,34px);font-weight:1000;color:var(--gold);text-align:center}
+.qualifiedElegant .qualifiedName strong{display:block;font-size:clamp(19px,1.55vw,27px);font-weight:1000;white-space:normal;overflow-wrap:anywhere}
+.qualifiedElegant .qualifiedName small{display:block;margin-top:3px;color:var(--muted);font-size:clamp(11px,.9vw,15px);font-weight:700}
+.qualifiedElegant .qualifiedScore{font-size:clamp(20px,1.7vw,29px);font-weight:1000}
+.qualifiedElegant .qualifiedFooter{position:relative;z-index:1;font-size:clamp(11px,1vw,16px);letter-spacing:.25em;font-weight:1000;color:var(--muted)}
+.qualifiedElegant .publicSignature{z-index:5}
+@media(max-width:800px){.qualifiedElegant .publicQualifiedList{grid-template-columns:1fr}.qualifiedElegant{overflow:auto}.qualifiedElegant .publicQualifiedRow{grid-template-columns:48px 1fr auto}}
+
+
+/* V18 — public qualification list: elegant vertical presentation, no athlete cards. */
+.readyLayoutNoRoster{display:block!important;width:min(1500px,94vw)!important;max-width:1500px!important;margin:4vh auto 0!important;}
+.readyMainCentered{width:100%!important;max-width:1500px!important;margin:0 auto!important;}
+.qualifiedElegant .publicQualifiedList{display:flex!important;flex-direction:column!important;grid-template-columns:none!important;width:min(980px,88vw)!important;gap:0!important;margin:2vh auto 3vh!important;}
+.qualifiedElegant .publicQualifiedRow{display:grid!important;grid-template-columns:70px 1fr auto!important;align-items:center!important;gap:22px!important;padding:1.35vh 0!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.16)!important;border-radius:0!important;background:transparent!important;backdrop-filter:none!important;box-shadow:none!important;}
+.qualifiedElegant .qualifiedRank{font-size:clamp(28px,2.5vw,42px)!important;text-align:left!important;}
+.qualifiedElegant .qualifiedName{text-align:left!important;}
+.qualifiedElegant .qualifiedName strong{font-size:clamp(22px,2vw,34px)!important;}
+.qualifiedElegant .qualifiedName small{font-size:clamp(12px,1vw,17px)!important;}
+.qualifiedElegant .qualifiedScore{font-size:clamp(22px,2vw,34px)!important;text-align:right!important;}
+@media(max-width:800px){.qualifiedElegant .publicQualifiedList{width:92vw!important}.qualifiedElegant .publicQualifiedRow{grid-template-columns:48px 1fr auto!important;gap:12px!important;}}
+
+/* V19 judge monitoring */
+.judgeStatusBar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}.judgeStatus{padding:7px 12px;border-radius:999px;font-weight:900;font-size:12px;letter-spacing:.06em;border:1px solid rgba(255,255,255,.15)}.judgeStatus.waiting{opacity:.75}.judgeStatus.ready{box-shadow:0 0 18px rgba(90,255,170,.18)}
+
+/* V23 — podium hierarchy is fixed by rank, never by text length */
+.podium{align-items:end!important}
+.podium .pod{min-height:0!important;height:280px!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important}
+.podium .pod.pos1{height:390px!important;min-height:390px!important}
+.podium .pod.pos2{height:330px!important;min-height:330px!important}
+.podium .pod.pos3,.podium .pod.pos4{height:280px!important;min-height:280px!important}
+.podium .pod h2{min-height:0!important;height:76px!important;display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:2!important;overflow:hidden!important;text-overflow:ellipsis!important;word-break:break-word!important;margin:14px 0 4px!important}
+.podium .pod small{display:block!important;min-height:0!important;height:34px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+.podium .pod strong{margin-top:auto!important;flex:none!important}
+@media(max-width:900px){
+  .podium .pod,.podium .pod.pos3,.podium .pod.pos4{height:220px!important;min-height:220px!important}
+  .podium .pod.pos1{height:280px!important;min-height:280px!important}
+  .podium .pod.pos2{height:250px!important;min-height:250px!important}
+}
+
+/* V24 — automatic tie-break by Presentation Average */
+.presentationTieRemark{display:block!important;color:var(--gold)!important;font-size:.48em!important;font-weight:900!important;letter-spacing:.08em!important;text-transform:uppercase!important;line-height:1.15!important;margin-top:3px!important;white-space:normal!important}
+.podium .presentationTieRemark{font-family:"Rajdhani",sans-serif;font-size:clamp(11px,1vw,16px)!important;min-height:0!important;height:auto!important;overflow:visible!important;text-overflow:clip!important}
+
+/* Exact tie resolution — operator action is intentionally prominent. */
+.manualTiePanel{margin:18px 0;padding:18px;border:1px solid rgba(255,210,80,.55);border-radius:18px;background:rgba(18,27,70,.72);box-shadow:0 12px 35px rgba(0,0,0,.18)}
+.manualTiePanel .phaseTag{color:#ffd76a;font-weight:800;letter-spacing:.12em}
+.manualTiePair{margin-top:14px;padding:16px;border-radius:14px;background:rgba(255,255,255,.045)}
+.manualTieActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.manualTieActions .btn{min-height:44px}
+
+/* V26 — larger podium cards and guaranteed visibility for long athlete/team names */
+.podiumWrap{width:100%;}
+.podium{
+  width:min(1500px,96vw)!important;
+  max-width:1500px!important;
+  gap:20px!important;
+  align-items:end!important;
+}
+.podium .pod{
+  width:100%!important;
+  min-width:0!important;
+  overflow:hidden!important;
+  padding:28px 18px 30px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+}
+.podium .pod.pos1{height:440px!important;min-height:440px!important;}
+.podium .pod.pos2{height:375px!important;min-height:375px!important;}
+.podium .pod.pos3,.podium .pod.pos4{height:335px!important;min-height:335px!important;}
+.podium .pod h2{
+  height:auto!important;
+  min-height:0!important;
+  max-height:105px!important;
+  display:-webkit-box!important;
+  -webkit-box-orient:vertical!important;
+  -webkit-line-clamp:3!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+  line-height:1.05!important;
+  margin:14px 0 7px!important;
+}
+.podium .pod.pos1 h2{font-size:clamp(24px,2.25vw,38px)!important;}
+.podium .pod.pos2 h2{font-size:clamp(22px,2.05vw,34px)!important;}
+.podium .pod.pos3 h2,.podium .pod.pos4 h2{font-size:clamp(20px,1.9vw,31px)!important;}
+.podium .pod small{
+  height:auto!important;
+  min-height:0!important;
+  max-height:42px!important;
+  white-space:normal!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  overflow-wrap:anywhere!important;
+  line-height:1.05!important;
+}
+.podium .pod strong{margin-top:auto!important;flex:none!important;font-size:clamp(30px,2.3vw,40px)!important;}
+@media(max-width:900px){
+  .podium{gap:10px!important;width:96vw!important;}
+  .podium .pod.pos1{height:320px!important;min-height:320px!important;}
+  .podium .pod.pos2{height:290px!important;min-height:290px!important;}
+  .podium .pod.pos3,.podium .pod.pos4{height:260px!important;min-height:260px!important;}
+}
+
+/* V20 — Public TV: show all 8 qualified athletes + slightly larger scores */
+@media(min-width:901px){
+  .qualifiedElegant .qualifiedHero{margin-bottom:1.2vh!important}
+  .qualifiedElegant .qualifiedHero h1{font-size:clamp(42px,4.8vw,76px)!important;margin:.25em 0 .12em!important}
+  .qualifiedElegant .qualifiedHero p{margin:.55em 0 0!important}
+  .qualifiedElegant .publicQualifiedList{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-auto-flow:row!important;
+    width:min(1240px,92vw)!important;
+    gap:0 38px!important;
+    margin:1vh auto 1.5vh!important;
+  }
+  .qualifiedElegant .publicQualifiedRow{
+    display:grid!important;
+    grid-template-columns:72px 1fr auto!important;
+    gap:18px!important;
+    min-width:0!important;
+    padding:1.05vh 4px!important;
+    min-height:0!important;
+  }
+  .qualifiedElegant .qualifiedRank{font-size:clamp(34px,2.8vw,48px)!important}
+  .qualifiedElegant .qualifiedName strong{font-size:clamp(25px,2.15vw,38px)!important;line-height:1.02!important}
+  .qualifiedElegant .qualifiedName small{font-size:clamp(12px,1vw,17px)!important;margin-top:4px!important}
+  .qualifiedElegant .qualifiedScore{font-size:clamp(25px,2.15vw,38px)!important}
+}
+
+/* Slightly enlarge score figures on every public round/final screen. */
+.summaryRound strong{font-size:clamp(64px,6.5vw,100px)!important}
+.finalRoundMini strong{font-size:clamp(36px,4vw,66px)!important}
+.finalOneScreen .finalHero .finalMainScore strong{font-size:clamp(115px,12.5vw,220px)!important}
+.finalOneScreen .finalHero .finalRankBig strong{font-size:clamp(100px,10.5vw,180px)!important}
+.finalScorePanel strong{font-size:clamp(100px,12vw,190px)!important}
+.cleanRoundScore strong{font-size:clamp(48px,5.3vw,82px)!important}
+.cleanFinalRounds strong{font-size:clamp(40px,4.3vw,68px)!important}
+.cleanFinalScore strong{font-size:clamp(98px,13.5vw,200px)!important}
+
+@media(max-width:900px){
+  .qualifiedElegant .publicQualifiedList{grid-template-columns:1fr!important}
+  .qualifiedElegant .qualifiedName strong{font-size:clamp(22px,5.5vw,34px)!important}
+  .qualifiedElegant .qualifiedRank{font-size:clamp(30px,7vw,42px)!important}
+}
+
+
+/* =========================================================
+   Remote Judges QR + Mobile Judge Interface
+   ========================================================= */
+.judgeQrButton{background:linear-gradient(135deg,#16385b,#075e7e)!important;border-color:rgba(83,216,255,.65)!important}
+.judgeQrOverlay{position:fixed;z-index:3000;inset:0;display:grid;place-items:center;padding:20px;background:rgba(1,5,10,.82);backdrop-filter:blur(16px);animation:judgeOverlayIn .22s ease both;overflow:auto}
+.judgeQrModal{width:min(1180px,96vw);max-height:94vh;overflow:auto;padding:24px;border:1px solid rgba(83,216,255,.22);border-radius:24px;background:linear-gradient(145deg,#0c1928,#050a12);box-shadow:0 30px 100px #000b,0 0 70px rgba(83,216,255,.08);animation:judgeModalIn .3s cubic-bezier(.2,.8,.2,1) both}
+.judgeQrHeader{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:20px}.judgeQrHeader h2{font-family:"Cinzel",serif;font-size:32px;margin:5px 0}.judgeQrHeader p{margin:0;color:var(--muted)}
+.judgeQrGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}.judgeQrCard{padding:16px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#0b1b2b,#07111c);text-align:center;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}.judgeQrCard:hover{transform:translateY(-4px);border-color:rgba(83,216,255,.4);box-shadow:0 15px 35px #0007}.judgeQrCardTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.judgeQrCardTop strong{font-size:20px;letter-spacing:.06em}.judgeQrStatus{font-size:10px;padding:5px 8px;border-radius:999px;background:#172435;color:#9eacbd;border:1px solid rgba(255,255,255,.08);font-weight:900;letter-spacing:.08em}.judgeQrStatus.connected{background:rgba(48,218,150,.12);border-color:rgba(48,218,150,.4);color:var(--green);box-shadow:0 0 18px rgba(48,218,150,.12)}
+.judgeQrImage{width:190px;height:190px;margin:8px auto;padding:7px;background:#fff;border-radius:12px;display:grid;place-items:center;box-shadow:0 12px 30px #0008}.judgeQrImage img,.judgeQrImage canvas{max-width:100%;height:auto}.judgeQrHint{font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:900;margin:10px 0}.judgeQrActions{display:flex;gap:7px;justify-content:center}.judgeQrActions .btn{font-size:11px;padding:8px 10px}.judgeQrFooter{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:12px}.judgeQrFooter b{color:var(--cyan);word-break:break-all}
+@keyframes judgeOverlayIn{from{opacity:0}to{opacity:1}}@keyframes judgeModalIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+
+.judgePhoneApp{min-height:100vh;background:radial-gradient(circle at 50% -5%,#164c72 0,#081525 34%,#03070d 72%);color:#f4f8fc;font-family:"Rajdhani",Segoe UI,Arial,sans-serif;position:relative;overflow-x:hidden;padding-bottom:34px}.judgePhoneGlow{position:fixed;border-radius:50%;filter:blur(70px);opacity:.16;pointer-events:none}.judgePhoneGlow.g1{width:250px;height:250px;background:#53d8ff;top:-100px;left:-100px}.judgePhoneGlow.g2{width:260px;height:260px;background:#a98bff;right:-130px;bottom:-100px}
+.judgePhoneHeader{position:sticky;top:0;z-index:10;min-height:68px;padding:10px 16px;display:flex;align-items:center;gap:11px;background:rgba(5,12,21,.88);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(14px)}.judgePhoneHeader img{width:46px;height:46px;object-fit:contain}.judgePhoneHeader small{display:block;color:var(--cyan);font-weight:900;letter-spacing:.14em;font-size:9px}.judgePhoneHeader strong{display:block;font-family:"Cinzel",serif;font-size:17px}.judgePhoneConnection{margin-left:auto;font-size:10px;font-weight:900;letter-spacing:.08em;padding:7px 9px;border-radius:999px;background:#2a2020;color:#ffb2b2;border:1px solid rgba(255,100,100,.2)}.judgePhoneConnection.connected{background:rgba(48,218,150,.12);border-color:rgba(48,218,150,.35);color:var(--green)}
+.judgePhoneMatch{position:relative;text-align:center;padding:26px 18px 17px}.judgePhoneEyebrow{font-size:10px;letter-spacing:.2em;color:var(--gold);font-weight:900}.judgePhoneMatch h1{font-family:"Cinzel",serif;font-size:clamp(25px,7vw,38px);line-height:1.08;margin:9px 0 3px}.judgePhoneMatch p{margin:0;color:var(--muted);font-size:15px}.judgePhoneRound{display:inline-block;margin-top:12px;padding:7px 12px;border-radius:999px;background:rgba(83,216,255,.08);border:1px solid rgba(83,216,255,.2);color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.08em}
+.judgeScoreCard{width:min(620px,calc(100% - 22px));margin:0 auto;padding:18px 15px 20px;border-radius:24px;background:linear-gradient(180deg,rgba(12,26,42,.96),rgba(5,12,20,.98));border:1px solid rgba(255,255,255,.10);box-shadow:0 24px 70px #0009;animation:judgeCardIn .35s ease both}.scoreSectionTitle{display:flex;justify-content:space-between;align-items:end;gap:10px;color:var(--cyan);font-size:13px;font-weight:1000;letter-spacing:.12em}.scoreSectionTitle small{font-size:9px;color:var(--muted);letter-spacing:.08em}.judgeAccuracyValue{text-align:center;font-size:clamp(66px,19vw,104px);font-weight:1000;line-height:.95;font-variant-numeric:tabular-nums;margin:9px 0 15px;text-shadow:0 0 28px rgba(83,216,255,.18);transition:transform .16s ease}.accuracyControls{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.25fr;gap:8px}.accuracyControls button,.partAdjust{border:1px solid rgba(255,255,255,.12);border-radius:14px;color:#fff;font-weight:1000;cursor:pointer;min-height:58px;font-size:20px;background:#142538;transition:transform .12s ease,filter .15s ease,box-shadow .18s ease}.accuracyControls button:active,.partAdjust:active{transform:scale(.95)}.accuracyMinus{background:linear-gradient(180deg,#6e2437,#4a1827)!important;border-color:rgba(255,99,125,.35)!important;font-size:22px!important}.accuracyMinus.big{font-size:26px!important}.accuracyPlus{background:linear-gradient(180deg,#125b70,#0d4053)!important;border-color:rgba(83,216,255,.3)!important}
+.presentationTitle{margin-top:25px;padding-top:19px;border-top:1px solid rgba(255,255,255,.08)}.presentationParts{display:grid;gap:9px;margin-top:11px}.partCard{padding:12px;border:1px solid rgba(255,255,255,.08);border-radius:15px;background:rgba(255,255,255,.025)}.partCard>b{display:block;font-size:13px;letter-spacing:.06em;margin-bottom:9px}.partControl{display:grid;grid-template-columns:58px 1fr 58px;gap:8px;align-items:center}.partAdjust{min-height:49px;font-size:24px;background:#102235}.partValue{text-align:center;font-size:31px;font-weight:1000;font-variant-numeric:tabular-nums}.presentationTotal{display:flex;justify-content:space-between;align-items:center;margin:13px 0;padding:12px 14px;border-radius:14px;background:rgba(83,216,255,.07);border:1px solid rgba(83,216,255,.16)}.presentationTotal span{font-size:12px;color:var(--muted);font-weight:900;letter-spacing:.12em}.presentationTotal strong{font-size:31px;color:var(--cyan);font-variant-numeric:tabular-nums}.judgePhoneSend{width:100%;min-height:62px;border:0;border-radius:16px;background:linear-gradient(135deg,#087aa1,#0c654c);color:#fff;font-size:20px;font-weight:1000;letter-spacing:.08em;box-shadow:0 14px 30px rgba(0,160,180,.18);cursor:pointer;transition:transform .18s ease,box-shadow .2s ease,filter .2s ease}.judgePhoneSend:active{transform:scale(.98)}.judgePhoneSend.sent{background:linear-gradient(135deg,#168d66,#14714f);box-shadow:0 0 30px rgba(48,218,150,.2);animation:scoreSent .45s ease both}.judgeWaiting{width:min(620px,calc(100% - 22px));margin:10px auto;padding:55px 20px;text-align:center;border:1px solid rgba(255,255,255,.08);border-radius:24px;background:rgba(8,18,30,.72)}.waitingIcon{font-size:48px;animation:waitingFloat 2s ease-in-out infinite}.judgeWaiting h2{font-family:"Cinzel",serif;font-size:22px;margin:12px 0 7px}.judgeWaiting p{color:var(--muted);margin:0;line-height:1.5}.judgePhoneToast{position:fixed;z-index:30;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;padding:11px 16px;border-radius:999px;background:#122438;border:1px solid rgba(83,216,255,.3);box-shadow:0 12px 30px #0008;color:#fff;font-weight:900;pointer-events:none;transition:.22s ease}.judgePhoneToast.show{opacity:1;transform:translate(-50%,0)}.judgePhoneToast.error{border-color:rgba(255,85,117,.4);background:#3b1824}@keyframes judgeCardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes waitingFloat{0%,100%{transform:translateY(0);opacity:.75}50%{transform:translateY(-6px);opacity:1}}@keyframes scoreSent{0%{transform:scale(1)}45%{transform:scale(1.025)}100%{transform:scale(1)}}
+@media(max-width:700px){.judgeQrModal{padding:15px;border-radius:18px}.judgeQrHeader{align-items:center}.judgeQrHeader h2{font-size:24px}.judgeQrGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.judgeQrCard{padding:10px}.judgeQrImage{width:140px;height:140px}.judgeQrActions{flex-direction:column}.judgeQrActions .btn{width:100%}.judgeQrFooter{flex-direction:column;align-items:stretch}.judgeQrFooter .btn{width:100%}.accuracyControls{gap:6px}.accuracyControls button{min-height:62px}.partControl{grid-template-columns:55px 1fr 55px}}
+@media(max-width:390px){.judgeQrGrid{grid-template-columns:1fr}.judgeQrImage{width:180px;height:180px}.accuracyControls{grid-template-columns:1fr 1fr}.accuracyControls button{min-height:58px}.judgePhoneMatch h1{font-size:26px}}
+.judgeQrDeleted{background:linear-gradient(145deg,#151d27,#0b1017)!important;color:#69788b!important;border:1px dashed #384657!important}.judgeQrDeleted span{font-weight:1000;letter-spacing:.12em;line-height:1.35}
+
+/* Remote Judge phone controls — landscape-first */
+.judgePhoneHeaderActions{margin-left:auto;display:flex;align-items:center;gap:8px}.judgePhoneFsBtn{width:42px;height:42px;border-radius:12px;border:1px solid rgba(83,216,255,.28);background:#10263a;color:#fff;font-size:21px;font-weight:900;cursor:pointer}.judgePhoneFsBtn.large{width:auto;height:52px;padding:0 20px;font-size:16px}.judgePhoneFsBtn:active{transform:scale(.94)}
+.judgePhoneApp{min-height:100dvh}.judgePhoneMatch{padding-top:16px}.judgePhoneHeader{padding:8px 14px}.judgePhoneHeader img{width:38px;height:38px}.judgePhoneHeader strong{font-size:15px}
+.partAdjust{font-size:28px!important;min-height:58px!important}.partAdjust:disabled{opacity:.3;cursor:not-allowed}.partMinus{background:linear-gradient(180deg,#5d2332,#3e1723)!important}.partPlus{background:linear-gradient(180deg,#125b70,#0d4053)!important}
+.accuracyControls{grid-template-columns:1.35fr 1.15fr 1.15fr 1.35fr}.accuracyControls button{min-height:78px!important;font-size:27px!important}.accuracyControls .accuracyMinus.big{font-size:34px!important}.accuracyControls .accuracyMinus{background:linear-gradient(180deg,#76273d,#491827)!important}.accuracyControls .accuracyPlus{background:linear-gradient(180deg,#12627a,#0b4053)!important}
+.judgeOrientationOverlay{display:none;position:fixed;inset:0;z-index:100;background:#040b14;color:#fff;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:14px;padding:24px}.judgeOrientationOverlay.show{display:flex}.orientationIcon{font-size:72px;animation:orientationRotate 1.4s ease-in-out infinite}.judgeOrientationOverlay strong{font-size:24px;letter-spacing:.08em}.judgeOrientationOverlay span{color:#aab7c6}.judgePortrait .judgePhoneApp{filter:blur(2px)}
+@keyframes orientationRotate{0%,100%{transform:rotate(0deg)}50%{transform:rotate(90deg)}}
+@media (orientation:landscape) and (max-width:1000px){.judgePhoneApp{padding-bottom:8px}.judgePhoneMatch{padding:8px 16px}.judgePhoneMatch h1{font-size:27px;margin:4px 0}.judgePhoneRound{margin-top:5px}.judgeScoreCard{width:min(900px,calc(100% - 28px));padding:12px 16px}.judgeAccuracyValue{font-size:68px;margin:3px 0 8px}.presentationParts{grid-template-columns:repeat(3,1fr)}.presentationTitle{margin-top:12px;padding-top:10px}.presentationTotal{margin:8px 0;padding:7px 12px}.judgePhoneSend{min-height:52px}.partAdjust{min-height:50px!important}.accuracyControls button{min-height:62px!important}}
+
+
+/* Remote judge connection status + collector + live ranking */
+.operatorJudgeStatus{margin:14px 0;padding:14px 16px;border:1px solid rgba(83,216,255,.14);border-radius:14px;background:linear-gradient(180deg,#0a1826,#07111c)}
+.operatorJudgeStatus .phaseTag{margin-bottom:10px}
+.operatorJudgeStatusGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.operatorJudgeStatusItem{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 11px;border-radius:10px;background:#121d29;border:1px solid rgba(255,255,255,.08);color:#8e9cad;transition:.2s ease}
+.operatorJudgeStatusItem b{color:#fff}.operatorJudgeStatusItem span{font-size:10px;font-weight:900;letter-spacing:.04em}.operatorJudgeStatusItem.online{border-color:rgba(48,218,150,.35);background:rgba(48,218,150,.08);color:#66e6ad}.operatorJudgeStatusItem.scored{border-color:rgba(83,216,255,.4);background:rgba(83,216,255,.09);color:#53d8ff}
+.collectorModal{width:min(600px,94vw)}.collectorQrCenter{text-align:center;padding:10px 0 8px}.collectorQrCenter .judgeQrImage{width:220px;height:220px}.collectorQrCenter .judgeQrActions{margin-top:14px}
+.currentRankingOverlay{position:fixed;inset:0;z-index:3200;background:rgba(1,5,10,.84);backdrop-filter:blur(15px);display:grid;place-items:center;padding:22px;animation:judgeOverlayIn .2s ease both}.currentRankingModal{width:min(1100px,96vw);max-height:92vh;overflow:auto;border:1px solid rgba(83,216,255,.22);border-radius:24px;background:linear-gradient(145deg,#0c1928,#050a12);box-shadow:0 30px 100px #000b;padding:24px}.currentRankingModal>header{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:18px}.currentRankingModal h2{font-family:"Cinzel",serif;font-size:30px;margin:5px 0}.currentRankingModal p{margin:0;color:var(--muted)}.currentRankingList .rank{font-size:clamp(18px,2vw,27px)}.rankingEmpty{padding:50px;text-align:center;color:var(--muted);font-size:24px;font-weight:900}
+.publicCurrentRanking{min-height:100vh;padding:5vh 5vw;background:radial-gradient(circle at 50% 8%,#123b60,#040a11 70%);color:#fff;text-align:center}.publicCurrentRanking header{margin-bottom:3vh}.publicCurrentRanking h1{font-family:"Cinzel",serif;font-size:clamp(42px,5vw,78px);margin:8px 0}.publicCurrentRanking .rankingMeta{font-size:clamp(16px,2vw,28px);color:var(--muted)}.publicCurrentRanking main{width:min(1250px,92vw);margin:auto}.publicCurrentRanking .ranking{text-align:left;background:rgba(4,12,20,.42);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden}.publicCurrentRanking .rank{padding:18px 22px;grid-template-columns:80px 1fr 180px 130px}.publicCurrentRanking footer{margin-top:25px;color:#6f8194;font-weight:900;letter-spacing:.18em}
+@media(max-width:700px){.currentRankingModal{padding:15px}.currentRankingModal>header{align-items:center}.publicCurrentRanking{padding:35px 12px}.publicCurrentRanking .rank{grid-template-columns:50px 1fr 90px 75px;padding:13px 10px;font-size:17px}.publicCurrentRanking .rank>b{font-size:30px}.publicCurrentRanking .rank em{font-size:11px}}
+
+/* === Final operator + judge touch layout refinement === */
+.actions{flex-wrap:nowrap;align-items:center;gap:6px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;white-space:nowrap}.actions::-webkit-scrollbar{display:none}.actions .btn{padding:9px 11px;font-size:13px;line-height:1;white-space:nowrap}.topbar{gap:14px}.brand{flex:0 0 auto;white-space:nowrap;font-size:14px}.appSignature{flex:0 0 auto}
+
+/* Judge Accuracy: large minus buttons above small plus buttons.
+   Left column = -0.3 / +0.3, right column = -0.1 / +0.1. */
+.accuracyControls{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:620px;margin:0 auto}.accuracyCol{display:grid;grid-template-rows:auto auto;gap:8px}.accuracyControls button{width:100%;border-radius:18px}.accuracyControls .accuracyMinus{min-height:105px!important;font-size:36px!important;font-weight:1000!important}.accuracyControls .accuracyPlus.small{min-height:50px!important;font-size:20px!important;font-weight:900!important;opacity:.94}.accuracyControls .accuracyPlus{background:linear-gradient(180deg,#12627a,#0b4053)!important;border-color:rgba(83,216,255,.28)!important}
+
+/* Keep the setup-selected mat number prominent on the phone. */
+.judgePhoneHeader small{font-size:11px;letter-spacing:.14em}.judgePhoneHeader small::first-line{font-weight:1000}
+
+@media (orientation:landscape) and (max-width:1000px){.accuracyControls{grid-template-columns:1fr 1fr;gap:12px;max-width:650px}.accuracyControls .accuracyMinus{min-height:82px!important;font-size:31px!important}.accuracyControls .accuracyPlus.small{min-height:42px!important;font-size:18px!important}.actions .btn{padding:8px 9px;font-size:12px}}
+@media(max-width:900px){.topbar{padding:0 10px}.brand{font-size:12px}.brand .topFedLogo{width:28px;height:28px}.actions .btn{font-size:11px;padding:8px 8px}.appSignature{font-size:11px}}
+
+/* FINAL8 judge names */
+.judgeNamesSetup{margin-top:16px}.judgeNameFields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.judgeNameRow{display:grid;grid-template-columns:52px 1fr;gap:9px;align-items:center}.judgeNameNo{display:grid;place-items:center;min-height:52px;border-radius:12px;background:rgba(83,216,255,.08);border:1px solid var(--line);font-weight:900;color:var(--cyan)}.judgeNameInput{margin-top:0!important;min-height:52px!important}.judgeQrCardTop>div{display:flex;flex-direction:column;align-items:flex-start;gap:2px}.judgeQrName{font-size:12px;color:var(--gold);font-weight:800;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.operatorJudgeStatusItem{justify-content:flex-start!important}.operatorJudgeIdentity{display:flex;flex-direction:column;gap:2px;min-width:0}.operatorJudgeIdentity strong{color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.operatorJudgeName{display:block;margin:3px 0 8px;color:var(--gold);font-weight:800;font-size:13px}.judgePhoneName{display:block;color:var(--gold);font-style:normal;font-weight:800;font-size:14px;letter-spacing:.05em;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}.judgePhoneHeader>div{min-width:0}@media(max-width:800px){.judgeNameFields{grid-template-columns:1fr}}
+
+.judgeQrNameEditor{display:flex;flex-direction:column;gap:6px;margin:12px 0 10px;text-align:left;color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.04em}.judgeQrNameEditor input{width:100%;box-sizing:border-box;min-height:46px!important;margin:0!important;padding:10px 12px!important;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-weight:700}.judgeQrNameEditor input::placeholder{color:rgba(255,255,255,.45)}
+
+.excelImportCard{margin-bottom:18px;border:1px solid rgba(212,175,55,.28)}
+.excelImportRow{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.excelImportRow p{margin:5px 0 0}
+.excelFileBtn{position:relative;overflow:hidden;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.excelFileBtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.excelImportStatus{margin-top:12px;font-size:12px;letter-spacing:.08em;color:#8b94a7}
+.excelImportStatus.successImport{color:#1f9d63;font-weight:700}
+
+/* FINAL20 — Public score formatting + elegant excluded judge notes */
+.publicJudgeRow .judgeScore{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:0;
+}
+.publicJudgeRow .judgeScore.isExcluded,
+.publicJudgeRow td.excluded{
+  color:#a8b4bf!important;
+  text-decoration:none!important;
+  opacity:1!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));
+}
+.publicJudgeRow .judgeScore.isExcluded .scoreValue,
+.publicJudgeRow td.excluded .scoreValue{
+  position:relative;
+  color:#9aa8b5;
+  opacity:.62;
+}
+.publicJudgeRow .judgeScore.isExcluded .scoreValue::after,
+.publicJudgeRow td.excluded .scoreValue::after{
+  content:"";
+  position:absolute;
+  left:-5px;
+  right:-5px;
+  top:50%;
+  height:2px;
+  transform:rotate(-7deg);
+  background:rgba(255,110,125,.72);
+  border-radius:2px;
+}
+.excludedBadge{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  min-height:20px;
+  padding:3px 7px;
+  border-radius:999px;
+  background:rgba(255,92,112,.11);
+  border:1px solid rgba(255,112,130,.28);
+  color:#ff9baa!important;
+  text-decoration:none!important;
+  font-size:clamp(8px,.52vw,11px)!important;
+  line-height:1!important;
+  letter-spacing:.08em!important;
+  font-weight:1000!important;
+  white-space:nowrap;
+  opacity:1!important;
+}
+.publicJudgeRow td.excluded{
+  text-align:center;
+  border-left:1px solid rgba(255,255,255,.035);
+}
+.publicJudgeRow td.excluded .excludedBadge{
+  margin-left:6px;
+}
+@media(max-width:760px){
+  .publicJudgeRow .judgeScore{gap:4px}
+  .excludedBadge{padding:2px 5px;font-size:8px!important}
+}
+
+/* FINAL21 — automatic tie-break presentation */
+.tieBreakPanel{margin:18px 0;padding:22px;border:1px solid rgba(255,210,80,.55);border-radius:18px;background:linear-gradient(145deg,rgba(255,210,80,.08),rgba(18,27,70,.75));box-shadow:0 14px 40px rgba(0,0,0,.22);text-align:center}.tieBreakPanel h2{margin:8px 0}.tieBreakPair{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin:18px 0}.tieBreakPair>div{padding:15px;border:1px solid var(--line);border-radius:14px;background:#071624}.tieBreakPair b,.tieBreakPair span{display:block}.tieBreakPair span{color:var(--muted);font-size:13px;margin-top:6px}.tieBreakPair>strong{color:var(--gold);font-size:22px}.tieBreakPanel .tieBtn{min-width:260px}.tieBreakOperatorCard .kpi{grid-template-columns:repeat(4,1fr)}.tieBreakAthletesMini{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}.tieBreakAthletesMini span{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:#071624;color:var(--muted)}.tieBreakAthletesMini span.active{color:var(--text);border-color:var(--gold);box-shadow:0 0 0 1px rgba(255,210,80,.2)}.tieBreakCurrent{text-align:center;padding:25px}.tieBreakCurrent .tiePoomsae{margin:28px 0}.publicTieBreakScreen{min-height:100vh;padding:clamp(25px,5vh,60px) 4vw;text-align:center;background:radial-gradient(circle at 50% 12%,#244e76,#050b12 68%);display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box}.tieBreakKicker{font-size:clamp(20px,2.2vw,34px);font-weight:1000;color:var(--gold);letter-spacing:.12em}.tieBreakPoomsaeLabel{margin-top:22px;color:var(--muted);font-size:clamp(13px,1.3vw,20px);letter-spacing:.12em}.publicTieBreakScreen .tieBreakPoomsae{font-size:clamp(42px,6vw,90px);font-weight:1000;color:var(--cyan);margin:8px 0 30px}.tieBreakContestants{width:min(1200px,94vw);display:grid;grid-template-columns:1fr 1fr;gap:22px}.tieBreakContestant{padding:25px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(7,22,36,.88)}.tieBreakContestant.active{border-color:rgba(255,210,80,.65)}.tieBreakAthleteName{font-size:clamp(25px,3vw,48px);font-weight:1000}.tieBreakClub{color:var(--muted);margin-top:5px}.tieBreakScore{font-size:clamp(42px,5vw,72px);font-weight:1000;margin-top:18px}.tieBreakState{font-size:13px;color:var(--muted);letter-spacing:.08em;margin-top:5px}.tieBreakInstruction{margin-top:25px;color:var(--muted);font-weight:800;letter-spacing:.06em}@media(max-width:700px){.tieBreakPair,.tieBreakContestants{grid-template-columns:1fr}.tieBreakPair>strong{display:none}.tieBreakOperatorCard .kpi{grid-template-columns:1fr 1fr}}
+
+/* FINAL22 — Collector phone: large, touch-friendly score fields. */
+.collectorApp .collectorJudgeBox{padding:16px;margin:12px 0;border:1px solid rgba(83,216,255,.18);border-radius:18px;background:linear-gradient(145deg,rgba(12,29,46,.96),rgba(7,17,28,.96));box-shadow:0 10px 25px rgba(0,0,0,.18)}
+.collectorApp .collectorJudgeTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;font-weight:1000;font-size:16px;letter-spacing:.06em}.collectorApp .collectorJudgeTitle small{color:var(--gold);font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:55%}
+.collectorApp .collectorFields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.collectorApp .collectorFields label{font-size:12px;font-weight:1000;letter-spacing:.08em;color:var(--muted)}.collectorApp .collectorInput{display:block;width:100%;box-sizing:border-box;margin-top:7px;min-height:82px!important;padding:8px 12px!important;border-radius:16px!important;border:2px solid rgba(83,216,255,.22)!important;background:#061522!important;color:#fff!important;font-size:38px!important;font-weight:1000!important;text-align:center!important;font-variant-numeric:tabular-nums}.collectorApp .collectorInput:focus{outline:none;border-color:rgba(83,216,255,.72)!important;box-shadow:0 0 0 4px rgba(83,216,255,.10)}.collectorApp .collectorInput:disabled{opacity:.48}.collectorApp .collectorSendBtn{margin-top:14px;min-height:72px!important}
+.judgeFinalNote{width:min(900px,calc(100% - 22px));margin:14px auto 28px;padding:18px;border:1px solid rgba(255,210,80,.28);border-radius:20px;background:linear-gradient(145deg,rgba(255,210,80,.08),rgba(7,22,36,.92));box-shadow:0 14px 35px rgba(0,0,0,.2);text-align:center}.judgeFinalNoteKicker{color:var(--gold);font-size:11px;font-weight:1000;letter-spacing:.16em}.judgeFinalNoteGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}.judgeFinalNoteGrid>div{padding:12px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08)}.judgeFinalNoteGrid span{display:block;color:var(--muted);font-size:10px;font-weight:900;letter-spacing:.1em}.judgeFinalNoteGrid strong{display:block;margin-top:4px;font-size:30px;font-weight:1000;font-variant-numeric:tabular-nums}.judgeFinalNoteTotal{border-color:rgba(83,216,255,.25)!important}.judgeFinalNoteTotal strong{color:var(--cyan)}.judgeFinalNote>small{color:#8191a3;font-size:9px;font-weight:900;letter-spacing:.08em}
+@media(max-width:520px){.collectorApp .collectorFields{grid-template-columns:1fr}.collectorApp .collectorInput{min-height:88px!important;font-size:40px!important}.judgeFinalNoteGrid{grid-template-columns:1fr 1fr}.judgeFinalNoteTotal{grid-column:1/-1}}
+
+/* FINAL23 — Public tie-break timer and touch robustness */
+.publicTieTimer{margin:6px 0 20px;padding:10px 28px;border:2px solid rgba(255,210,80,.45);border-radius:18px;background:rgba(4,12,20,.72);color:#fff;font-size:clamp(38px,5vw,72px);font-weight:1000;letter-spacing:.06em;font-variant-numeric:tabular-nums;box-shadow:0 12px 35px rgba(0,0,0,.25)}
+.judgePhoneApp button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+/* FINAL24: phone controls must remain directly touchable in every orientation */
+.judgeOrientationOverlay{display:none!important;pointer-events:none!important}
+.judgePhoneApp button,.judgePhoneApp input{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.collectorApp .collectorInput{pointer-events:auto!important;user-select:text!important;-webkit-user-select:text!important}
+.collectorApp .collectorInput:disabled{cursor:not-allowed}
+
+/* FINAL25 — live score validation for Collector and Judge QR */
+.collectorApp .collectorInput.scoreValid{border-color:rgba(48,218,150,.95)!important;background:rgba(24,110,75,.22)!important;box-shadow:0 0 0 4px rgba(48,218,150,.10),0 0 24px rgba(48,218,150,.10)!important}
+.collectorApp .collectorInput.scoreInvalid{border-color:rgba(255,76,105,.98)!important;background:rgba(125,25,45,.22)!important;box-shadow:0 0 0 4px rgba(255,76,105,.10),0 0 24px rgba(255,76,105,.08)!important}
+.judgePhoneApp .scoreValidText{color:#30da96!important;text-shadow:0 0 18px rgba(48,218,150,.22)}
+.judgePhoneApp .scoreInvalidText{color:#ff4c69!important;text-shadow:0 0 18px rgba(255,76,105,.20)}
+.judgePhoneApp #judgePhoneMain button:disabled{opacity:.55!important;filter:saturate(.55);cursor:not-allowed}
+
+/* Live public judge status */
+.publicJudgeProgress{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px auto 8px;}
+.publicJudgeProgressTitle{font-size:12px;font-weight:900;letter-spacing:.18em;opacity:.55;margin-right:4px;}
+.publicJudgeChip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);font-size:15px;font-weight:900;letter-spacing:.04em;}
+.publicJudgeChip i{font-style:normal;font-size:15px;opacity:.8;}
+.publicJudgeChip.done{background:rgba(64,190,120,.12);border-color:rgba(80,220,140,.42);color:#bff5d5;}
+.publicJudgeChip.pending{background:rgba(255,255,255,.035);color:#aab7c0;}
+.soundToggle{min-width:112px;}
+
+/* FINAL28 — Public result hierarchy: Poomsae note first, averages small below. */
+.resultSummary{justify-content:flex-start!important;gap:12px!important;padding:12px 18px 18px!important}
+.resultSummary .summaryRound{order:1!important;margin:0!important;padding:18px 8px 22px!important;border-top:0!important;border-bottom:1px solid rgba(240,200,107,.28)!important;text-align:center!important}
+.resultSummary .summaryRound span{font-size:clamp(12px,1vw,17px)!important;letter-spacing:.16em!important}
+.resultSummary .summaryRound strong{font-size:clamp(105px,13vw,210px)!important;line-height:.78!important;margin-top:10px!important;color:#f0c86b!important}
+.summaryAverages{order:2!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important;margin-top:auto!important;padding:0 4px!important}
+.summaryAverages>div{padding:9px 7px!important;text-align:center!important;border:1px solid rgba(255,255,255,.08)!important;border-radius:10px!important;background:rgba(255,255,255,.025)!important}
+.summaryAverages span{display:block!important;font-size:clamp(8px,.65vw,11px)!important;letter-spacing:.10em!important;opacity:.5!important;font-weight:900!important;white-space:nowrap!important}
+.summaryAverages strong{display:block!important;font-size:clamp(22px,2.2vw,36px)!important;line-height:1!important;margin-top:5px!important;font-weight:1000!important}
+@media(max-width:760px){
+ .resultSummary{padding:8px 10px!important}
+ .resultSummary .summaryRound strong{font-size:clamp(70px,18vw,115px)!important}
+ .summaryAverages{margin-top:0!important}
+ .summaryAverages strong{font-size:clamp(20px,6vw,30px)!important}
+}
